@@ -1,0 +1,484 @@
+#define AU_ESCENA_TEXT_SUB_RASTERS 3
+struct STRasterIndLineasGrp {
+	SI32 indices[AU_ESCENA_TEXT_SUB_RASTERS];
+};
+
+/*{
+			AUFuenteGlyph* fuenteGlyph		= _fuenteTextura->fuenteDef();
+			AUFuenteLineas* fuenteLineas	= _fuenteTextura->tmpFuenteLineas(); NBASSERT(fuenteLineas != NULL)
+			const float tamCajaEmF			= (float)fuenteGlyph->tamanoCajaEM();
+			const float tamFuenteF			= (float)_fuenteTextura->tamanoEscena();
+			//Relacion puertoVision con escena
+			const NBRectangulo puertoVision	= NBGestorEscena::puertoDeVision(this->idEscena);
+			const NBCajaAABB cajaProyeccion	= NBGestorEscena::cajaProyeccionGrupo(this->idEscena, (ENGestorEscenaGrupo)this->idGrupo);
+			NBTamano tamProyeccion;			NBCAJAAABB_TAMANO(tamProyeccion, cajaProyeccion);
+			const NBTamano unidsGLPorPx(tamProyeccion.ancho / puertoVision.ancho, tamProyeccion.alto / puertoVision.alto);
+			//Relacion cajaEm con puertoVision y escena
+			NBPunto vecEscalaAncho; NBMATRIZ_MULTIPLICAR_PUNTO_SIN_TRASLADAR(vecEscalaAncho, _cacheObjEscena.matrizEscena, 1.0f, 0.0f) //Determina la transformacion del ancho
+			NBPunto vecEscalaAlto; NBMATRIZ_MULTIPLICAR_PUNTO_SIN_TRASLADAR(vecEscalaAlto, _cacheObjEscena.matrizEscena, 0.0f, 1.0f) //Determina la transformacion del alto
+			const NBTamanoP<SI32> avanceEmPorPixel(vecEscalaAncho.x * tamCajaEmF * unidsGLPorPx.ancho / tamFuenteF, vecEscalaAlto.y * tamCajaEmF * unidsGLPorPx.alto / tamFuenteF); //Saltos Em por cada pixel de puerto de vision
+			//
+			AUArregloNativoP<STFuenteLineasVertice>* vertices = fuenteLineas->vertices();
+			const STFuenteLineasVertice* arrVertices = vertices->arreglo();
+			//Procesar los caracteres (es la misma fuente)
+			UI16 i; const UI16 conteo = _caracteresDef.conteo;
+			for(i = 0; i < conteo; i++){
+				const STEscenaTextoChar* datosChar = _caracteresDef.elemPtr(i);
+				const char* strCaracter = &_texto.str()[datosChar->iPrimerByteChar];
+				SI32 posCharTmp = 0;
+				UI32 caracter; NBGESTORFUENTES_CHAR_DESDE_UTF8(caracter, strCaracter, posCharTmp);
+				//
+				STFuenteGlyphDatos* datosGlyph = fuenteGlyph->datosGlyphPorCaracter(caracter);
+				if(datosGlyph != NULL){
+					AUGlyph* glyph = datosGlyph->objForma;
+					if(glyph != NULL){
+						//Calcular la posicion del centroEm en relacion a pixel escena
+						const NBPunto centroEnEscena(0.0f + datosChar->tmpPosEnOrg.x + NBMATRIZ_TRASLADO_X(_cacheObjEscena.matrizEscena), 0.0f + datosChar->tmpPosEnOrg.y + NBMATRIZ_TRASLADO_Y(_cacheObjEscena.matrizEscena));
+						const NBPunto centroEnPuerto(((centroEnEscena.x - cajaProyeccion.xMin) / unidsGLPorPx.ancho), ((tamProyeccion.alto - (centroEnEscena.y - cajaProyeccion.yMin)) / unidsGLPorPx.alto)); //EjeY invertido
+						const NBPunto bordeIzqSupPixEnPuerto((float)((SI32)centroEnPuerto.x), (float)((SI32)centroEnPuerto.y));
+						const NBTamano ajusteEnPix(centroEnPuerto.x - bordeIzqSupPixEnPuerto.x, (centroEnPuerto.y == bordeIzqSupPixEnPuerto.y) ? 0.0f : 1.0f - (centroEnPuerto.y - bordeIzqSupPixEnPuerto.y)); //EjeY invertido
+						NBPunto centroPixCero;
+						centroPixCero.x = centroEnEscena.x - (ajusteEnPix.ancho * unidsGLPorPx.ancho) + (unidsGLPorPx.ancho * 0.5f);
+						centroPixCero.y = centroEnEscena.y - (ajusteEnPix.alto * unidsGLPorPx.alto) + (unidsGLPorPx.alto * 0.5f);
+						//float yValEscena		=  + (unidsGLPorPx.alto * yValEm / (float)avanceEmPorPixel.alto);
+						//float xCenPixEscena	=  + ((float)bloqIni * unidsGLPorPx.anc
+						//
+						STFuenteLineasGlyphMuestra* lineasDef = fuenteLineas->muestraParaGlyph(caracter, (ajusteEnPix.ancho >= 0.15f && ajusteEnPix.ancho < 0.50f ? 1 : ajusteEnPix.ancho >= 0.50f && ajusteEnPix.ancho < 0.85f ? 2 : 0) * 255 / 3);
+						if(lineasDef != NULL){
+							//Puntos
+							{
+								const STFuenteLineasVertice* pt = &arrVertices[lineasDef->iPrimerPunto];
+								const STFuenteLineasVertice* ptSigUlt = &arrVertices[lineasDef->iPrimerPunto + lineasDef->cantidadPuntos];
+								while(pt < ptSigUlt){
+									NBVerticeGL v;
+									v.x	= centroPixCero.x + ((float)pt->pos * unidsGLPorPx.ancho);
+									v.y	= centroPixCero.y + ((float)pt->linea * unidsGLPorPx.alto);
+									NBCOLOR_ESTABLECER(v, pt->intensidad, pt->intensidad, pt->intensidad, 255)
+									vertsPuntos->agregarElemento(v); //PRINTF_INFO("FuenteLineas, punto(%.2f, %.2f).\n", v.x, v.y);
+									pt++;
+								}
+							}
+							//Lineas
+							{
+								const STFuenteLineasVertice* pt = &arrVertices[lineasDef->iPrimerLinea];
+								const STFuenteLineasVertice* ptSigUlt = &arrVertices[lineasDef->iPrimerLinea + (lineasDef->cantidadLineas * 2)];
+								while(pt < ptSigUlt){
+									NBVerticeGL v, v2;
+									v.x	= centroPixCero.x + ((float)pt->pos * unidsGLPorPx.ancho);
+									v.y	= centroPixCero.y + ((float)pt->linea * unidsGLPorPx.alto);
+									NBCOLOR_ESTABLECER(v, pt->intensidad, pt->intensidad, pt->intensidad, 255)
+									vertsLineas->agregarElemento(v);
+									pt++;
+									v2.x = centroPixCero.x + ((float)(pt->pos + 1) * unidsGLPorPx.ancho); //+1 porque las lineas no pintan el punto final
+									v2.y = centroPixCero.y + ((float)pt->linea * unidsGLPorPx.alto);
+									NBCOLOR_ESTABLECER(v2, pt->intensidad, pt->intensidad, pt->intensidad, 255)
+									vertsLineas->agregarElemento(v2); //PRINTF_INFO("FuenteLineas, linea(%.2f, %.2f)-(%.2f, %.2f).\n", v.x, v.y, v2.x, v2.y);
+									pt++;
+								}
+							}
+						}
+					}
+				}
+			}
+		}*/
+		//PRUEBA: calculando intersecciones
+		/*if(false){
+			AUFuenteGlyph* fuenteGlyph		= _fuenteTextura->fuenteDef();
+			const float tamCajaEmF			= (float)fuenteGlyph->tamanoCajaEM();
+			const float tamFuenteF			= (float)_fuenteTextura->tamanoEscena();
+			//
+			AUArregloNativoMutableP<STGlyphFiguraP<SI32> >* figsTmp			= new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STGlyphFiguraP<SI32> >;
+			AUArregloNativoMutableP<STGlyphVerticeP<SI32> >* vertsTmp		= new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STGlyphVerticeP<SI32> >;
+			AUArregloNativoMutableP<SI32>* iCharDef							= new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<SI32>();
+			AUArregloNativoMutableP<STRasterIndLineasGrp>* iCaracteres		= new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STRasterIndLineasGrp>();
+			AUArregloNativoMutableP<STGlyphInterseccionGrpP<SI32> >** iLineas = (AUArregloNativoMutableP<STGlyphInterseccionGrpP<SI32> >**) NBGestorMemoria::reservarMemoria(sizeof(AUArregloNativoMutableP<STGlyphInterseccionGrpP<SI32> >*) * AU_ESCENA_TEXT_SUB_RASTERS, ENMemoriaTipo_Temporal);
+			AUArregloNativoMutableP<STGlyphInterseccionP<SI32> >** intersecciones = (AUArregloNativoMutableP<STGlyphInterseccionP<SI32> >**) NBGestorMemoria::reservarMemoria(sizeof(AUArregloNativoMutableP<STGlyphInterseccionP<SI32> >*) * AU_ESCENA_TEXT_SUB_RASTERS, ENMemoriaTipo_Temporal);
+			AUArregloNativoMutableP<STGlyphInterseccionP<SI32> >** posInter = (AUArregloNativoMutableP<STGlyphInterseccionP<SI32> >**) NBGestorMemoria::reservarMemoria(sizeof(AUArregloNativoMutableP<STGlyphInterseccionP<SI32> >*) * AU_ESCENA_TEXT_SUB_RASTERS, ENMemoriaTipo_Temporal);
+			{
+				SI32 i;
+				for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+					iLineas[i]			= new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STGlyphInterseccionGrpP<SI32> >();
+					intersecciones[i]	= new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STGlyphInterseccionP<SI32> >();
+					posInter[i]			= new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STGlyphInterseccionP<SI32> >();
+				}
+			}
+			//Relacion puertoVision con escena
+			const NBRectangulo puertoVision	= NBGestorEscena::puertoDeVision(this->idEscena);
+			const NBCajaAABB cajaProyeccion	= NBGestorEscena::cajaProyeccionGrupo(this->idEscena, (ENGestorEscenaGrupo)this->idGrupo);
+			NBTamano tamProyeccion;			NBCAJAAABB_TAMANO(tamProyeccion, cajaProyeccion);
+			const NBTamano unidsGLPorPx(tamProyeccion.ancho / puertoVision.ancho, tamProyeccion.alto / puertoVision.alto);
+			//Relacion cajaEm con puertoVision y escena
+			NBPunto vecEscalaAncho; NBMATRIZ_MULTIPLICAR_PUNTO_SIN_TRASLADAR(vecEscalaAncho, _cacheObjEscena.matrizEscena, 1.0f, 0.0f) //Determina la tranformacion del ancho
+			NBPunto vecEscalaAlto; NBMATRIZ_MULTIPLICAR_PUNTO_SIN_TRASLADAR(vecEscalaAlto, _cacheObjEscena.matrizEscena, 0.0f, 1.0f) //Determina la transformacion del alto
+			const NBTamanoP<SI32> avanceEmPorPixel(vecEscalaAncho.x * tamCajaEmF * unidsGLPorPx.ancho / tamFuenteF, vecEscalaAlto.y * tamCajaEmF * unidsGLPorPx.alto / tamFuenteF); //Saltos Em por cada pixel de puerto de vision
+			//PRINTF_INFO("puertoVision(%.2f, %.2f)-(%.2f, %.2f).\n", puertoVision.x, puertoVision.y, puertoVision.ancho, puertoVision.alto);
+			//PRINTF_INFO("cajaProyeccion(%.2f, %.2f)-(%.2f, %.2f).\n", cajaProyeccion.xMin, cajaProyeccion.xMax, cajaProyeccion.yMin, cajaProyeccion.yMax);
+			//PRINTF_INFO("unidsGLPorPx(%.2f, %.2f) avanceEmPorPixel(%d, %d).\n", unidsGLPorPx.ancho, unidsGLPorPx.alto, avanceEmPorPixel.ancho, avanceEmPorPixel.alto);
+			//Procesar los caracteres (es la misma fuente)
+			UI16 i; const UI16 conteo = _caracteresDef.conteo;
+			for(i = 0; i < conteo; i++){
+				const STEscenaTextoChar* datosChar = _caracteresDef.elemPtr(i);
+				const char* strCaracter = &_texto.str()[datosChar->iPrimerByteChar];
+				bool tmpDbgImprimir = false; //tmpDbgImprimir = (strCaracter[0] == 'o');
+				SI32 posLocal			= 0;
+				UI32 caracter; NBGESTORFUENTES_CHAR_DESDE_UTF8(caracter, strCaracter, posLocal);
+				if(tmpDbgImprimir){
+					PRINTF_INFO("Caracter: UTF32(%d, %d bytes) '%s'.\n", caracter, posLocal, strCaracter);
+				}
+				STFuenteGlyphDatos* datosGlyph = fuenteGlyph->datosGlyphPorCaracter(caracter);
+				if(datosGlyph != NULL){
+					AUGlyph* glyph = datosGlyph->objForma;
+					if(glyph != NULL){
+						NBCajaAABBP<SI32> limitesT; NBCAJAAABB_INICIALIZAR(limitesT)
+						AUArregloNativoP<STGlyphFigura>* figs = glyph->figuras();
+						AUArregloNativoP<STGlyphVertice>* verts = glyph->vertices();
+						if(figs != NULL && verts != NULL){
+							figsTmp->vaciar();
+							vertsTmp->vaciar();
+							//Transformar vertices locales a vertices escena (solo rotacion y escala, se conserva el eje/centro)
+							UI16 v; const UI16 conteoV = verts->conteo;
+							for(v = 0; v < conteoV; v++){
+								const STGlyphVertice* vert = verts->elemPtr(v);
+								const NBPunto posFloat((float)vert->x, (float)vert->y);
+								NBPunto posTransformada; NBMATRIZ_MULTIPLICAR_PUNTO_SIN_TRASLADAR(posTransformada, _cacheObjEscena.matrizEscena, posFloat.x, posFloat.y);
+								STGlyphVerticeP<SI32> vertT;
+								vertT.esRef = vert->esRef;
+								vertT.x		= (SI32)posTransformada.x;
+								vertT.y		= (SI32)posTransformada.y;
+								vertsTmp->agregarElemento(vertT);
+							}
+							//Calcular nuevas figuras
+							UI16 f; const UI16 conteoF = figs->conteo;
+							for(f = 0; f < conteoF; f++){
+								const STGlyphFigura* fig = figs->elemPtr(f);
+								if(fig->cantVertice > 0){
+									STGlyphFiguraP<SI32> figT;
+									figT.iPrimerVertice	= fig->iPrimerVertice;
+									figT.cantVertice	= fig->cantVertice;
+									STGlyphVerticeP<SI32>* vertT = vertsTmp->elemPtr(figT.iPrimerVertice);
+									STGlyphVerticeP<SI32>* vertTUlt = vertsTmp->elemPtr(figT.iPrimerVertice + figT.cantVertice - 1);
+									figT.limites.xMin = figT.limites.xMax = vertT->x;
+									figT.limites.yMin = figT.limites.yMax = vertT->y;
+									while(++vertT <= vertTUlt) {
+										if(figT.limites.xMin > vertT->x) figT.limites.xMin = vertT->x;
+										if(figT.limites.yMin > vertT->y) figT.limites.yMin = vertT->y;
+										if(figT.limites.xMax < vertT->x) figT.limites.xMax = vertT->x;
+										if(figT.limites.yMax < vertT->y) figT.limites.yMax = vertT->y;
+									}
+									NBASSERT(figT.limites.xMin <= figT.limites.xMax && figT.limites.yMin <= figT.limites.yMax)
+									NBCAJAAABB_ENVOLVER_CAJA(limitesT, figT.limites);
+									figsTmp->agregarElemento(figT);
+								}
+							}
+							//Calcular bordes de bloque superior e inferior en la cajaEM
+							SI32 yInfEnBordeEm	= (limitesT.yMin / avanceEmPorPixel.alto) * avanceEmPorPixel.alto;
+							SI32 ySupEnBordeEm	= (limitesT.yMax / avanceEmPorPixel.alto) * avanceEmPorPixel.alto;
+							if(limitesT.yMin < 0 && (limitesT.yMin % avanceEmPorPixel.alto) != 0){ yInfEnBordeEm -= avanceEmPorPixel.alto; }
+							if(limitesT.yMax > 0 && (limitesT.yMax % avanceEmPorPixel.alto) != 0){ ySupEnBordeEm += avanceEmPorPixel.alto; }
+							ySupEnBordeEm += avanceEmPorPixel.alto; //Temporal para probar
+							NBASSERT(yInfEnBordeEm <= limitesT.yMin)
+							NBASSERT(ySupEnBordeEm >= limitesT.yMax)
+							NBASSERT((ySupEnBordeEm % avanceEmPorPixel.alto) == 0)
+							NBASSERT((yInfEnBordeEm % avanceEmPorPixel.alto) == 0)
+							//NBASSERT((ySupEnBordeEm - limitesT.yMax) < avanceEmPorPixel.alto) //El agregado hacia el borde del bloque superior
+							SI32 cantLineasAntes[AU_ESCENA_TEXT_SUB_RASTERS];
+							NBASSERT((limitesT.yMin - yInfEnBordeEm) < avanceEmPorPixel.alto) //El punto medio desde el borde del bloque inferior
+							{
+								SI32 i;
+								for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+									cantLineasAntes[i] = iLineas[i]->conteo;
+								}
+							}
+							NBUtilRasterizadorP<SI32>::acumularGlyphIntersecciones(figsTmp, vertsTmp, ENGlyphOrientacion_Lineas, yInfEnBordeEm / avanceEmPorPixel.alto, ySupEnBordeEm / avanceEmPorPixel.alto, avanceEmPorPixel.alto, AU_ESCENA_TEXT_SUB_RASTERS, iLineas, intersecciones);
+							{
+								SI32 iL1;
+								for(iL1 = 0; iL1 < AU_ESCENA_TEXT_SUB_RASTERS; iL1++){
+									if(cantLineasAntes[iL1] != iLineas[iL1]->conteo){
+										STRasterIndLineasGrp indLinesGrp;
+										{
+											SI32 i;
+											for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+												indLinesGrp.indices[i] = cantLineasAntes[i];
+											}
+										}
+										iCaracteres->agregarElemento(indLinesGrp);
+										iCharDef->agregarElemento(i);
+										//PRINTF_INFO("Caracter agregado rangosLineas(...).\n");
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			//PRINTF_INFO("(8 %% 10) = %d = (%d), (-8 %% 10) = %d = (%d).\n", (8 % 10), 8 - (8 % 10) + (10 /2), (-8 % 10), -8 - (-8 % 10) - (10 /2));
+			AUCadenaMutable8* dbgStr = new(ENMemoriaTipo_Temporal) AUCadenaMutable8();
+			AUCadenaMutable8* dbgStr2 = new(ENMemoriaTipo_Temporal) AUCadenaMutable8();
+			AUArregloNativoMutableP<STGlyphInterseccionRangoP<SI32> >* rangosIntersecciones = new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STGlyphInterseccionRangoP<SI32> >();
+			AUArregloNativoMutableP<STGlyphInterseccionRangoP<SI32> >* rangosIntersGrupos = new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STGlyphInterseccionRangoP<SI32> >();
+			NBVerticeGL vertTmp;
+			for(i = 0; i < iCaracteres->conteo; i++){
+				const STEscenaTextoChar* datosChar = _caracteresDef.elemPtr(iCharDef->elem(i));
+				const char* strCaracter			= &_texto.str()[datosChar->iPrimerByteChar];
+				//
+				bool tmpDbgImprimir = false; //tmpDbgImprimir = (strCaracter[0] == 'o');
+				//Calcular la posicion del centroEm en relacion a pixel escena
+				const NBPunto centroEnEscena(0.0f + datosChar->tmpPosEnOrg.x + NBMATRIZ_TRASLADO_X(_cacheObjEscena.matrizEscena), 0.0f + datosChar->tmpPosEnOrg.y + NBMATRIZ_TRASLADO_Y(_cacheObjEscena.matrizEscena));
+				const NBPunto centroEnPuerto(((centroEnEscena.x - cajaProyeccion.xMin) / unidsGLPorPx.ancho), ((tamProyeccion.alto - (centroEnEscena.y - cajaProyeccion.yMin)) / unidsGLPorPx.alto)); //EjeY invertido
+				const NBPunto bordeIzqSupPixEnPuerto((float)((SI32)centroEnPuerto.x), (float)((SI32)centroEnPuerto.y));
+				const NBTamano ajusteEnPix(centroEnPuerto.x - bordeIzqSupPixEnPuerto.x, (centroEnPuerto.y == bordeIzqSupPixEnPuerto.y) ? 0.0f : 1.0f - (centroEnPuerto.y - bordeIzqSupPixEnPuerto.y)); //EjeY invertido
+				//PRINTF_INFO("CetroEscena(%.2f, %.2f) centroEnPuerto(%.2f, %.2f).\n", centroEnEscena.x, centroEnEscena.y, centroEnPuerto.x, centroEnPuerto.y);
+				//
+				STRasterIndLineasGrp iEnLineas	= iCaracteres->elem(i);
+				STRasterIndLineasGrp iSigUltimasLineas;
+				if((i + 1) < iCaracteres->conteo){
+					iSigUltimasLineas			= iCaracteres->elem(i + 1);
+				} else {
+					SI32 i;
+					for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+						iSigUltimasLineas.indices[i]= iLineas[i]->conteo;
+					}
+				}
+				//
+				if(tmpDbgImprimir){
+					PRINTF_INFO("Procesando caracter(%c) #%d de %d: '%s'\n", (i + 1), strCaracter[0], iCaracteres->conteo, &_texto.str()[datosChar->iPrimerByteChar]);
+				}
+				dbgStr2->vaciar();
+				bool quedanLineas = false;
+				{
+					SI32 i;
+					for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){ if(iEnLineas.indices[i] < iSigUltimasLineas.indices[i]){ quedanLineas = true; break; } }
+				}
+				while(quedanLineas){
+					quedanLineas = false;
+					//Definir el rango a procesar (el menor)
+					bool consumirLineas[AU_ESCENA_TEXT_SUB_RASTERS];
+					SI32 valRango = 0, conteoEvaluados = 0;
+					{
+						SI32 i;
+						for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+							consumirLineas[i] = iEnLineas.indices[i] < iSigUltimasLineas.indices[i];
+							if(consumirLineas[i]) if(valRango > iLineas[i]->elem(iEnLineas.indices[i]).refEm || conteoEvaluados == 0){ valRango = iLineas[i]->elem(iEnLineas.indices[i]).refEm; conteoEvaluados++; }
+						}
+					}
+					//Filtrar solo subgrupos que pertenecen al rango
+					{
+						SI32 i;
+						for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+							if(consumirLineas[i]) consumirLineas[i] = (iLineas[i]->elem(iEnLineas.indices[i]).refEm == valRango);
+						}
+					}
+					//Definir rangos de intersecciones
+					float yValEm = 0.0f;
+					{
+						SI32 i;
+						for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+							posInter[i]->vaciar();
+							if(consumirLineas[i]) {
+								const SI32 iPrimerInter = iLineas[i]->elem(iEnLineas.indices[i]).iPrimerElem;
+								if((iEnLineas.indices[i] + 1) < iLineas[i]->conteo) {
+									const SI32 iSigUltimaInter = iLineas[i]->elem(iEnLineas.indices[i] + 1).iPrimerElem; NBASSERT(iPrimerInter <= iSigUltimaInter)
+									if(iPrimerInter < iSigUltimaInter){
+										posInter[i]->agregarElementos(intersecciones[i]->elemPtr(iPrimerInter), (iSigUltimaInter - iPrimerInter));
+										yValEm = (float)iLineas[i]->elem(iEnLineas.indices[i]).refEm;
+										//PRINTF_INFO("Eje(0) = %d (de %d a %d).\n", iLineas[i]->elem(iEnLineas.indices[i]).valor, iEnLineas.indices[i], iSigUltimasLineas.indices[i]);
+									}
+								}
+							}
+						}
+					}
+					rangosIntersecciones->vaciar();
+					rangosIntersGrupos->vaciar();
+					if(tmpDbgImprimir){
+						SI32 i, j; PRINTF_INFO("yValEm(%d) bloque(%d).\n", (SI32)yValEm, (SI32)yValEm / avanceEmPorPixel.alto);
+						for(j = 0; j < AU_ESCENA_TEXT_SUB_RASTERS; j++){
+							PRINTF_INFO("[ind_%d] %d Intersecciones.\n", j, posInter[j]->conteo);
+							for(i = 0; i < posInter[j]->conteo; i++){
+								STGlyphInterseccionP<SI32>* inter = posInter[j]->elemPtr(i);
+								PRINTF_INFO("#%d fig(%d) valor(%d) positivo(%s)\n", (i + 1), inter->indiceFigura, inter->valor, inter->sentidoPositivo ? "si" : "no");
+							}
+						}
+					}
+					//Depalazar en X todas las intersecciones
+					const SI32 unidadesEmAjuste = (ajusteEnPix.ancho * (float)avanceEmPorPixel.ancho);
+					{
+						SI32 i;
+						for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+							STGlyphInterseccionP<SI32>* ptrInters = posInter[i]->elemento;
+							STGlyphInterseccionP<SI32>* ptrIntSigUlt = posInter[i]->elemento + posInter[i]->conteo;
+							while (ptrInters < ptrIntSigUlt) {
+								ptrInters->valor += unidadesEmAjuste;
+								ptrInters++;
+							}
+						}
+					}
+					//
+					NBUtilRasterizadorP<SI32>::consumeRangosEnPromedios(posInter, AU_ESCENA_TEXT_SUB_RASTERS, rangosIntersecciones);
+					if(tmpDbgImprimir){
+						PRINTF_INFO("%d rangos de intersecciones emPorPix(%d, %d):\n", rangosIntersecciones->conteo, avanceEmPorPixel.ancho, avanceEmPorPixel.alto);
+						if(rangosIntersecciones->conteo > 0){
+							//Impimir ordenados
+							AUArregloNativoMutableP<STGlyphInterseccionRangoP<SI32> >* rangosTmp = new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STGlyphInterseccionRangoP<SI32> >();
+							rangosTmp->agregarElementos(rangosIntersecciones->elemento, rangosIntersecciones->conteo);
+							while(rangosTmp->conteo != 0){
+								SI32 i, iValMin = 0, valMin = rangosTmp->elemPtr(0)->iniRango;
+								for(i = 1; i < rangosTmp->conteo; i++){
+									STGlyphInterseccionRangoP<SI32>* rango = rangosTmp->elemPtr(i);
+									if(valMin > rango->iniRango){
+										valMin = rango->iniRango;
+										iValMin = i;
+									}
+								}
+								//
+								STGlyphInterseccionRangoP<SI32>* rango = rangosTmp->elemPtr(iValMin);
+								PRINTF_INFO("#%d rango(%d, %d) = pix(%.2f, %.2f) = (%d) %d aportadores\n", (i + 1), rango->iniRango, rango->finRango, (float)rango->iniRango / (float)avanceEmPorPixel.ancho, (float)rango->finRango / (float)avanceEmPorPixel.ancho, (rango->finRango - rango->iniRango), rango->aportadores);
+								//
+								rangosTmp->quitarElementoEnIndice(iValMin);
+							}
+							rangosTmp->liberar();
+						}
+					}
+					//NBUtilRasterizadorP<SI32>::fusionarRangosEnSecuenciasPromedios(rangosIntersecciones, rangosIntersGrupos);
+					NBUtilRasterizadorP<SI32>::fusionarRangosEnSecuenciasBloques(rangosIntersecciones, avanceEmPorPixel.ancho, rangosIntersGrupos);
+					if(tmpDbgImprimir){
+						PRINTF_INFO("Fusionandos a:.\n");
+						for(i = 0; i < rangosIntersGrupos->conteo; i++){
+							STGlyphInterseccionRangoP<SI32>* rango = rangosIntersGrupos->elemPtr(i);
+							PRINTF_INFO("#%d rango(%d, %d) = pix(%.2f, %.2f) = (%d) %d aportadores\n", (i + 1), rango->iniRango, rango->finRango, (float)rango->iniRango / (float)avanceEmPorPixel.ancho, (float)rango->finRango / (float)avanceEmPorPixel.ancho, (rango->finRango - rango->iniRango), rango->aportadores);
+						}
+						PRINTF_INFO("Tadaaaa!.\n");
+					}
+					//PRINTF_INFO("----------------------\n");
+					const float yValEscena	= centroEnEscena.y - (ajusteEnPix.alto * unidsGLPorPx.alto) + (unidsGLPorPx.alto * 0.5f) + (unidsGLPorPx.alto * yValEm / (float)avanceEmPorPixel.alto);
+					const float tmpYValRelPuerto = ((tamProyeccion.alto - (yValEscena - cajaProyeccion.yMin)) / unidsGLPorPx.alto);
+					//PRINTF_INFO("yValEm(%2.f) yValEscena(%.2f), tmpYValRelPuerto(%.2f).\n", yValEm, yValEscena, tmpYValRelPuerto);
+					NBASSERT(((tmpYValRelPuerto - (float)((SI32)tmpYValRelPuerto)) >= 0.47f && (tmpYValRelPuerto - (float)((SI32)tmpYValRelPuerto)) <= 0.53f) || ((tmpYValRelPuerto - (float)((SI32)tmpYValRelPuerto)) >= -0.53f && (tmpYValRelPuerto - (float)((SI32)tmpYValRelPuerto)) <= -0.47f))
+					//
+					SI32 iGrp; const SI32 conteoGrp = rangosIntersGrupos->conteo;
+					for(iGrp = 0; iGrp < conteoGrp; iGrp++){
+						const STGlyphInterseccionRangoP<SI32> rango = rangosIntersGrupos->elemento[iGrp];
+						const SI32 xIniEm		= rango.iniRango / *+ ajusteEm.ancho* /; //sumar mueve el eje hacia la izquierda
+						const SI32 xFinEm		= rango.finRango / *+ ajusteEm.ancho* /; //sumar mueve el eje hacia la izquierda
+						const float alphaVertF	= ((float)a * (float)rango.aportadores / (float)AU_ESCENA_TEXT_SUB_RASTERS); NBASSERT(rango.aportadores <= AU_ESCENA_TEXT_SUB_RASTERS)
+						const SI32 bloqIni		= (xIniEm / avanceEmPorPixel.ancho) + (xIniEm < 0 ? -1 : 0);
+						const SI32 bloqFin		= (xFinEm / avanceEmPorPixel.ancho) + (xFinEm < 0 ? -1 : 0);
+						if(xIniEm < xFinEm){
+							//Calcular pixel y siguiente cuadranteEM
+							dbgStr->vaciar();
+							float xCenPixEscena	= centroEnEscena.x - (ajusteEnPix.ancho * unidsGLPorPx.ancho) + (unidsGLPorPx.ancho * 0.5f) + ((float)bloqIni * unidsGLPorPx.ancho);
+							if(bloqIni == bloqFin){
+								//Linea inicia y termina en el mismo pixel.
+								//No atraviesa ningun pixel.
+								const float usoRel		= (float)(xFinEm - xIniEm) / (float)avanceEmPorPixel.ancho;
+								dbgStr->agregarConFormato(" ptoUnicoX(%.2f al %.0f%%)", xCenPixEscena, usoRel * 100.0f);
+								NBPUNTO_ESTABLECER(vertTmp, xCenPixEscena, yValEscena);
+								NBCOLOR_ESTABLECER(vertTmp, 255.0f * alphaVertF * usoRel, 255.0f * alphaVertF * usoRel, 255.0f * alphaVertF * usoRel, alphaVertF * usoRel) //NBCOLOR_ESTABLECER(vertTmp, r, g, b, alphaVertic * usoRel)
+								vertsPuntos->agregarElemento(vertTmp);
+							} else {
+								//La linea toca dos pixeles o mas
+								NBASSERT(bloqIni < bloqFin)
+								//
+								const float ocupaDeIniRel	= (float)(avanceEmPorPixel.ancho - (xIniEm % avanceEmPorPixel.ancho)) / (float)avanceEmPorPixel.ancho;
+								float ocupaDeFinRel			= (float)(xFinEm % avanceEmPorPixel.ancho) / (float)avanceEmPorPixel.ancho;
+								if(tmpDbgImprimir){
+									//dbgStr2->agregarConFormato("Y(%.2f) rangosProm(%d, %d)=(%.1f, %.1f)(%d elems) rangosBloques(%d, %d).\n", yValEscena, xIniEm, xFinEm, (float)xIniEm / (float)avanceEmPorPixel.ancho, (float)xFinEm / (float)avanceEmPorPixel.ancho, cantSumados, bloqIni, bloqFin);
+									dbgStr2->agregarConFormato("Y(%.2f) rangos(%d, %d)=(%.1f, %.1f)(%d elems) rangosBloques(%d, %d).\n", yValEscena, xIniEm, xFinEm, (float)xIniEm / (float)avanceEmPorPixel.ancho, (float)xFinEm / (float)avanceEmPorPixel.ancho, rango.aportadores, bloqIni, bloqFin);
+									dbgStr2->agregarConFormato("        emIni(%d) emFin(%d) bloqIni(%d) bloqFin(%d) xCenPixEscena(%.2f).\n", xIniEm, xFinEm, bloqIni, bloqFin, xCenPixEscena);
+									dbgStr2->agregarConFormato("        ocupaDeIniRel(%.2f) ocupaDeFinRel(%.2f).\n", ocupaDeIniRel, ocupaDeFinRel);
+								}
+								SI32 bloquesFullEnCentro	= (bloqFin - bloqIni) - 1.0f;
+								//Punto a la izquierda
+								if(ocupaDeIniRel > 0.9f){ //Tolerancia a imprecision decimal
+									bloquesFullEnCentro++;
+									dbgStr->agregarConFormato(" ptoIniX(%.2f al full)", xCenPixEscena);
+								} else {
+									if(ocupaDeIniRel > 0.1f){
+										//PRINTF_INFO("INI-Factor sobra(%.2f) ocupa(%.2f) factorRGB(%.2f, %.2f, %.2f) valorig(%d, %d, %d) valOcupa(%d, %d, %d).\n", (1.0f - ocupaDeIniRel), ocupaDeIniRel, factorR, factorG, factorB, r, g, b, r2, g2, b2);
+										dbgStr->agregarConFormato(" ptoIniX(%.2f al %.0f%%)", xCenPixEscena, ocupaDeIniRel * 100.0f);
+										NBPUNTO_ESTABLECER(vertTmp, xCenPixEscena, yValEscena);
+										NBCOLOR_ESTABLECER(vertTmp, 255.0f * ocupaDeIniRel * ocupaDeIniRel * ocupaDeIniRel, 255.0f * ocupaDeIniRel * ocupaDeIniRel, 255.0f * ocupaDeIniRel, 255 / *alphaVertF * ocupaDeIniRel* /)
+										//vertsPuntos->agregarElemento(vertTmp);
+										vertsPuntosParciales->agregarElemento(vertTmp);
+									} else {
+										dbgStr->agregarConFormato(" ptoIniX(%.2f al nada)", xCenPixEscena);
+									}
+									xCenPixEscena += unidsGLPorPx.ancho;
+								}
+								//Punto al final
+								if(ocupaDeFinRel > 0.9f){ //Tolerancia a imprecision decimal
+									bloquesFullEnCentro++; ocupaDeFinRel = 0.0f;
+								}
+								//Rellenos al centro
+								if(bloquesFullEnCentro > 0){
+									if(bloquesFullEnCentro < 3){
+										//Secuecia de puntos (de ninguno a dos max)
+										while(bloquesFullEnCentro > 0){
+											dbgStr->agregarConFormato(" ptoMedX(%.2f)", xCenPixEscena);
+											NBPUNTO_ESTABLECER(vertTmp, xCenPixEscena, yValEscena);
+											NBCOLOR_ESTABLECER(vertTmp, 255.0f, 255.0f, 255.0f, alphaVertF) //NBCOLOR_ESTABLECER(vertTmp, r, g, b, alphaVertic)
+											vertsPuntos->agregarElemento(vertTmp); xCenPixEscena += unidsGLPorPx.ancho;
+											bloquesFullEnCentro--;
+										}
+									} else {
+										//Linea
+										dbgStr->agregarConFormato(" lineaMedX(%.2f a %.2f)", xCenPixEscena, xCenPixEscena + ((float)(bloquesFullEnCentro - 1) * unidsGLPorPx.ancho));
+										NBPUNTO_ESTABLECER(vertTmp, xCenPixEscena, yValEscena)
+										NBCOLOR_ESTABLECER(vertTmp, 255.0f, 255.0f, 255.0f, 255 / *alphaVertF* /) //NBCOLOR_ESTABLECER(vertTmp, r, g, b, alphaVertic)
+										vertsLineas->agregarElemento(vertTmp); xCenPixEscena += ((float)bloquesFullEnCentro * unidsGLPorPx.ancho); //+1, porque el rasterizados no pinta el final de la linea (regla de salida del diamante)
+										NBPUNTO_ESTABLECER(vertTmp, xCenPixEscena, yValEscena)
+										NBCOLOR_ESTABLECER(vertTmp, 255.0f, 255.0f, 255.0f, 255 / *alphaVertF* /) //NBCOLOR_ESTABLECER(vertTmp, r, g, b, alphaVertic)
+										vertsLineas->agregarElemento(vertTmp); //xCenPixEscena += unidsGLPorPx.ancho; //No sumar
+									}
+								}
+								if(ocupaDeFinRel > 0.1f){
+									//PRINTF_INFO("FIN-Factor ocupa(%.2f) sobra(%.2f) factorRGB(%.2f, %.2f, %.2f) valorig(%d, %d, %d) valOcupa(%d, %d, %d).\n", ocupaDeFinRel, (1.0f - ocupaDeFinRel), factorR, factorG, factorB, r, g, b, r2, g2, b2);
+									dbgStr->agregarConFormato(" ptoFinX(%.2f al %.0f%%)", xCenPixEscena, ocupaDeFinRel * 100.0f);
+									NBPUNTO_ESTABLECER(vertTmp, xCenPixEscena, yValEscena);
+									NBCOLOR_ESTABLECER(vertTmp, 255.0f * ocupaDeFinRel, 255.0f * ocupaDeFinRel * ocupaDeFinRel, 255.0f * ocupaDeFinRel * ocupaDeFinRel * ocupaDeFinRel, 255 / *alphaVertF * ocupaDeFinRel* /)
+									//vertsPuntos->agregarElemento(vertTmp);
+									vertsPuntosParciales->agregarElemento(vertTmp);
+								}
+							}
+							if(dbgStr->tamano() > 0 && (tmpDbgImprimir)){
+								//PRINTF_INFO("Agregando figuras valY(%.2f, %d sublineas): %s.\n", yValEscena, cantSumados, dbgStr->str());
+								//PRINTF_INFO("Agregando figuras valY(%.2f, %d sublineas): %s.\n", yValEscena, rango.aportadores, dbgStr->str());
+							}
+						}
+					}
+					//Siguientes
+					{
+						SI32 i;
+						for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+							if(consumirLineas[i]) iEnLineas.indices[i]++;
+							if(iEnLineas.indices[i] < iSigUltimasLineas.indices[i]){
+								quedanLineas = true;
+							}
+						}
+					}
+				};
+				if(tmpDbgImprimir){
+					//PRINTF_INFO("%s.\navanceEmPorPixel(%d, %d)", dbgStr2->str(), avanceEmPorPixel.ancho, avanceEmPorPixel.alto);
+				}
+			}
+			rangosIntersGrupos->liberar();
+			rangosIntersecciones->liberar();
+			dbgStr2->liberar();
+			dbgStr->liberar();
+			//
+			{
+				SI32 i;
+				for(i = 0; i < AU_ESCENA_TEXT_SUB_RASTERS; i++){
+					iLineas[i]->liberar();
+					intersecciones[i]->liberar();
+					posInter[i]->liberar();
+				}
+				NBGestorMemoria::liberarMemoria(posInter);
+				NBGestorMemoria::liberarMemoria(intersecciones);
+				NBGestorMemoria::liberarMemoria(iLineas);
+			}
+			iCaracteres->liberar();
+			iCharDef->liberar();
+			vertsTmp->liberar();
+			figsTmp->liberar();
+		}*/

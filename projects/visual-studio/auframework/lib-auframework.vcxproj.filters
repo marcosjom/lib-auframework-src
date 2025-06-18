@@ -1,0 +1,864 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\cpp\AUFrameworkBaseStdAfx.cpp">
+      <Filter>lib-auframework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBFlujoLector.cpp">
+      <Filter>lib-auframework\extensiones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUSonido.cpp">
+      <Filter>lib-auframework\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUSonidoMutable.cpp">
+      <Filter>lib-auframework\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUSonidoStream.cpp">
+      <Filter>lib-auframework\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGestorAnimadores.cpp">
+      <Filter>lib-auframework\animaciones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBits.cpp">
+      <Filter>lib-auframework\mapaDeBits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBitsLienzo.cpp">
+      <Filter>lib-auframework\mapaDeBits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBitsMutable.cpp">
+      <Filter>lib-auframework\mapaDeBits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUFigura.cpp">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUFiguraMutable.cpp">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUForma.cpp">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUFormaMutable.cpp">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUSocket.cpp">
+      <Filter>lib-auframework\comun\red</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGestorAUObjetos.cpp">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGestorDatos.cpp">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGestorFuentes.cpp">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGestorMemoria.cpp">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGestorPilaLlamadas.cpp">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGestorRed.cpp">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBZonaMemoriaConIndice.cpp">
+      <Filter>lib-auframework\comun\memoria</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBZonaMemoriaConIndiceLibres.cpp">
+      <Filter>lib-auframework\comun\memoria</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUPaqueteIndice.cpp">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUSubArchivo.cpp">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUArchivo.cpp">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUArchivoFisico.cpp">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUFuenteMapaBits.cpp">
+      <Filter>lib-auframework\comun\fuentes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUObjeto.cpp">
+      <Filter>lib-auframework\comun</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUArreglo.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUArregloMutable.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUArregloOrdenado.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUArregloOrdenadoMutable.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUDiccionario.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUDiccionarioMutable.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUDiccionarioTexto.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUDiccionarioTextoMutable.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUPilaFIFO.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUPilaFIFOMutable.cpp">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUFrameworkBaseRegistro.cpp">
+      <Filter>lib-auframework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBUtilFormatoAud.cpp">
+      <Filter>lib-auframework\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUArchivoCrypt.cpp">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\ogg\bitwise.c">
+      <Filter>lib-auframework\extensiones\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\ogg\framing.c">
+      <Filter>lib-auframework\extensiones\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\analysis.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\barkmel.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\bitrate.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\block.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\codebook.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\envelope.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\floor0.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\floor1.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\info.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\lookup.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\lpc.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\lsp.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\mapping0.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\mdct.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\psy.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\registry.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\res0.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\sharedbook.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\smallft.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\synthesis.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\vorbisenc.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\vorbisfile.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\window.c">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBUtilFormatoOgg.cpp">
+      <Filter>lib-auframework\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUFuenteLineas.cpp">
+      <Filter>lib-auframework\comun\fuentes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAtlasMapa.cpp">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUAtlasMapaMutable.cpp">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMallaMapa.cpp">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMallaMapaMutable.cpp">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBitsProps.cpp">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBitsPropsMutable.cpp">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUPngChuncks.cpp">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUPngChuncksMutable.cpp">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUArchivoEnBuffer.cpp">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUHilo.cpp">
+      <Filter>lib-auframework\comun\hilos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGestorHilos.cpp">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUHttpCliente.cpp">
+      <Filter>lib-auframework\comun\red\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUHttpRespuesta.cpp">
+      <Filter>lib-auframework\comun\red\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUHttpSolicitud.cpp">
+      <Filter>lib-auframework\comun\red\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUWebServiceConsulta.cpp">
+      <Filter>lib-auframework\comun\red\WebService</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUWSFilesDownloader.cpp">
+      <Filter>lib-auframework\comun\red\WebService</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUBase64.cpp">
+      <Filter>lib-auframework\comun\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGestorArchivos.cpp">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGlueLibJpegRead.cpp">
+      <Filter>lib-auframework\extensiones\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\NBGlueLibJpegWrite.cpp">
+      <Filter>lib-auframework\extensiones\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\cpp\AUArchivoEnBufferExterno.cpp">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\AUFrameworkBase.h">
+      <Filter>lib-auframework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUFrameworkBaseDefiniciones.h">
+      <Filter>lib-auframework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUFrameworkBaseStdAfx.h">
+      <Filter>lib-auframework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBFlujoLector.h">
+      <Filter>lib-auframework\extensiones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUSonido.h">
+      <Filter>lib-auframework\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUSonidoMutable.h">
+      <Filter>lib-auframework\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUSonidoStream.h">
+      <Filter>lib-auframework\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBAnimador.h">
+      <Filter>lib-auframework\animaciones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorAnimadores.h">
+      <Filter>lib-auframework\animaciones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMapaBits.h">
+      <Filter>lib-auframework\mapaDeBits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMapaBitsLienzo.h">
+      <Filter>lib-auframework\mapaDeBits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMapaBitsMutable.h">
+      <Filter>lib-auframework\mapaDeBits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUFigura.h">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUFiguraDefiniciones.h">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUFiguraMutable.h">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUForma.h">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUFormaMutable.h">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUSocket.h">
+      <Filter>lib-auframework\comun\red</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorArchivos.h">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorAUObjetos.h">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorDatos.h">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorFuentes.h">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorFuentesTxtOrgDef.h">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorMemoria.h">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorPilaLlamadas.h">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorRed.h">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBZonaMemoriaConIndice.h">
+      <Filter>lib-auframework\comun\memoria</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBZonaMemoriaConIndiceLibres.h">
+      <Filter>lib-auframework\comun\memoria</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPaqueteIndice.h">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUSubArchivo.h">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArchivo.h">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArchivoFisico.h">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBTriangulo.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBTransformaciones.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBTamano.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBRectangulo.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBPuntoColor.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBPunto.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBMatriz.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBLinea.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBFiguraVertice.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBCurva.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBColor.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBCharTextoGlyph.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBCajaPolar.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBCajaAABB.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBAngulo.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUFuenteMapaBits.h">
+      <Filter>lib-auframework\comun\fuentes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUObjeto.h">
+      <Filter>lib-auframework\comun</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAlmacenDatos.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaNativaP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAlmacenDatosP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArreglo.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloNativo.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloNativoMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloNativoMutableP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloNativoOrdenado.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloNativoOrdenadoMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloNativoOrdenadoMutableP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloNativoOrdenadoP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloNativoP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloOrdenado.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArregloOrdenadoMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUCacheNativaMutableP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUCadena.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUCadenaMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUCadenaMutableP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUCadenaP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDatosCSV.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDatosCSVP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDatosXML.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDatosXMLMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDatosXMLMutableP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDatosXMLP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDiccionario.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDiccionarioMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDiccionarioTexto.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUDiccionarioTextoMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUNumerico.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUNumericoP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaFIFO.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaFIFOMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaFIFONativa.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaFIFONativaMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaFIFONativaMutableP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaFIFONativaP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaNativa.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaNativaMutable.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPilaNativaMutableP.h">
+      <Filter>lib-auframework\comun\datos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUFrameworkBaseRegistro.h">
+      <Filter>lib-auframework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBUtilFormatoAud.h">
+      <Filter>lib-auframework\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArchivoCrypt.h">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\ogg\ogg.h">
+      <Filter>lib-auframework\extensiones\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\ogg\os_types.h">
+      <Filter>lib-auframework\extensiones\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\backends.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\bitrate.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\codebook.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\codec.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\codec_internal.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\envelope.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\highlevel.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\lookup.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\lookup_data.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\lpc.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\lsp.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\masking.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\mdct.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\misc.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\os.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\psy.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\registry.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\scales.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\smallft.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\vorbisenc.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\vorbisfile.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\window.h">
+      <Filter>lib-auframework\extensiones\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\books\coupled\res_books_51.h">
+      <Filter>lib-auframework\extensiones\vorbis\books\coupled</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\books\coupled\res_books_stereo.h">
+      <Filter>lib-auframework\extensiones\vorbis\books\coupled</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\books\floor\floor_books.h">
+      <Filter>lib-auframework\extensiones\vorbis\books\floor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\books\uncoupled\res_books_uncoupled.h">
+      <Filter>lib-auframework\extensiones\vorbis\books\uncoupled</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\floor_all.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\psych_8.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\psych_11.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\psych_16.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\psych_44.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_8.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_16.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_44.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_44p51.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_44u.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_8.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_11.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_16.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_22.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_32.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_44.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_44p51.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_44u.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_X.h">
+      <Filter>lib-auframework\extensiones\vorbis\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBUtilFormatoOgg.h">
+      <Filter>lib-auframework\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUFuenteLineas.h">
+      <Filter>lib-auframework\comun\fuentes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAtlasMapa.h">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUAtlasMapaMutable.h">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMallaMapa.h">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMallaMapaMutable.h">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMapaBitsProps.h">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUMapaBitsPropsMutable.h">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPngChuncks.h">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUPngChuncksMutable.h">
+      <Filter>lib-auframework\mapaDeBits\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArchivoEnBuffer.h">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUHilo.h">
+      <Filter>lib-auframework\comun\hilos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGestorHilos.h">
+      <Filter>lib-auframework\comun\gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUHttpCliente.h">
+      <Filter>lib-auframework\comun\red\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUHttpRespuesta.h">
+      <Filter>lib-auframework\comun\red\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUHttpSolicitud.h">
+      <Filter>lib-auframework\comun\red\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUWebServiceConsulta.h">
+      <Filter>lib-auframework\comun\red\WebService</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUWSFilesDownloader.h">
+      <Filter>lib-auframework\comun\red\WebService</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBObjeto.h">
+      <Filter>lib-auframework\comun</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBParserJsonP.h">
+      <Filter>lib-auframework\comun\parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBParserXmlP.h">
+      <Filter>lib-auframework\comun\parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUBase64.h">
+      <Filter>lib-auframework\comun\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBEstadoCicloJuego.h">
+      <Filter>lib-auframework\comun\estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBUtilRasterizadorDefs.h">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBUtilRasterizadorP.h">
+      <Filter>lib-auframework\comun\formas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGlueLibJpegRead.h">
+      <Filter>lib-auframework\extensiones\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\NBGlueLibJpegWrite.h">
+      <Filter>lib-auframework\extensiones\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\AUArchivoEnBufferExterno.h">
+      <Filter>lib-auframework\comun\archivos</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="lib-auframework">
+      <UniqueIdentifier>{c863b063-40f4-419a-8a12-247605929756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun">
+      <UniqueIdentifier>{427f475e-c4cf-4d7a-8203-1efbff184134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\red">
+      <UniqueIdentifier>{bbb0c624-7a56-4cff-acc8-74189c28a5d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\gestores">
+      <UniqueIdentifier>{bdd5d644-c817-49a7-9f3f-365addba9df5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\memoria">
+      <UniqueIdentifier>{5e3e89fe-0857-45ce-a3c2-c328d62d9717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\archivos">
+      <UniqueIdentifier>{379432d3-7b79-455a-a35a-d2b4ed31a2f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\datos">
+      <UniqueIdentifier>{507bfb96-7929-4b1f-bb53-f09ee2651994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\estructuras">
+      <UniqueIdentifier>{a8ae9820-ba2b-4ea5-a7fa-66060a2df5de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\fuentes">
+      <UniqueIdentifier>{8321e4af-895a-4150-a19c-eb1188c2163f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\formas">
+      <UniqueIdentifier>{c9112871-cf35-4846-8eb3-81eb7c68566e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\mapaDeBits">
+      <UniqueIdentifier>{4c99a762-8a5a-440d-95e3-d9595d491081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\animaciones">
+      <UniqueIdentifier>{b7d6b855-e012-48e8-afce-92482e6798e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\audio">
+      <UniqueIdentifier>{3c07fa94-950e-4159-adbd-31578bb35184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\extensiones">
+      <UniqueIdentifier>{9399606b-cb7c-42a6-bdda-60884a858e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\extensiones\libjpeg">
+      <UniqueIdentifier>{f7e6dded-08b7-4781-ab92-0bb68b7a26bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\extensiones\vorbis">
+      <UniqueIdentifier>{51d8d06c-ff6a-4aa4-8d38-8b792e10e089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\extensiones\vorbis\books">
+      <UniqueIdentifier>{011d9152-edb2-4aac-9086-2caf0ef9c7b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\extensiones\vorbis\books\coupled">
+      <UniqueIdentifier>{d359b6c2-3b1f-4032-9a55-4cb6c7b5d524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\extensiones\vorbis\books\floor">
+      <UniqueIdentifier>{bf5a57fe-1c8b-47d7-aaee-18297d649f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\extensiones\vorbis\books\uncoupled">
+      <UniqueIdentifier>{d0806b52-49ab-4ad6-be47-04b3d7db394a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\extensiones\vorbis\modes">
+      <UniqueIdentifier>{e924e51e-607f-47ba-b230-22e3eed5308b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\extensiones\ogg">
+      <UniqueIdentifier>{b6e4ad8a-5c91-4e9f-9985-43eb2f58dac2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\mapaDeBits\ExtraData">
+      <UniqueIdentifier>{5d8115f8-c6cf-4e85-8118-2ba406040b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\hilos">
+      <UniqueIdentifier>{5128b998-7c4d-4bba-a215-2911ca8941b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\red\http">
+      <UniqueIdentifier>{c04913c3-e9dd-403e-afd0-67ca77fa66ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\red\WebService">
+      <UniqueIdentifier>{9abf6645-1ee8-4847-80e9-5821bf0ff96d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\parsers">
+      <UniqueIdentifier>{130c87e4-b11a-4437-8a77-2f7fe9e1fa36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-auframework\comun\crypto">
+      <UniqueIdentifier>{92d5e521-cd7e-41d4-a844-b8538c654454}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

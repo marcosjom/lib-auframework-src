@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>lib-auframework</ProjectName>
+    <ProjectGuid>{A3DD7FE1-CACF-4CD6-BE77-0D696E5CC4D0}</ProjectGuid>
+    <RootNamespace>lib-auframework</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\..\bin\win\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\..\tmp\win\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\..\bin\win\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\..\tmp\win\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\..\src\c;$(ProjectDir)..\..\..\src\c\freetype\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\..\src\c;$(ProjectDir)..\..\..\src\c\freetype\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\win\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\tmp\win\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\win\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\tmp\win\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\..\..\sys-nbframework/lib-nbframework-src/include;$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\src\c;$(ProjectDir)..\..\..\src\c\vorbis;$(ProjectDir)..\..\..\src\c\libjpeg;</AdditionalIncludeDirectories>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>AUFrameworkBaseStdAfx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4355;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_MBCS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>AUFrameworkBaseStdAfx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\..\..\sys-nbframework/lib-nbframework-src/include;$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\src\c;$(ProjectDir)..\..\..\src\c\vorbis;$(ProjectDir)..\..\..\src\c\libjpeg;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4355;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_MBCS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\include;$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\src\c;$(ProjectDir)..\..\..\src\c\vorbis;$(ProjectDir)..\..\..\src\c\libjpeg</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\..\..\sys-nbframework\lib-nbframework-src\include;$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\src\c;$(ProjectDir)..\..\..\src\c\vorbis;$(ProjectDir)..\..\..\src\c\libjpeg</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\cpp\AUArchivoCrypt.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUArchivoEnBuffer.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUArchivoEnBufferExterno.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUBase64.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUFrameworkBaseRegistro.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUFuenteLineas.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUFuenteMapaBits.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUHilo.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUHttpCliente.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUHttpRespuesta.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUHttpSolicitud.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMallaMapa.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMallaMapaMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBitsProps.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBitsPropsMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUObjeto.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUPngChuncks.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUPngChuncksMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUSocket.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUWebServiceConsulta.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUWSFilesDownloader.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBFlujoLector.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGestorArchivos.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGestorAUObjetos.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGestorDatos.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGestorFuentes.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGestorHilos.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGestorMemoria.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGestorPilaLlamadas.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUArreglo.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUArregloMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUArregloOrdenado.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUArregloOrdenadoMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUDiccionario.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUDiccionarioMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUDiccionarioTexto.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUDiccionarioTextoMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUPilaFIFO.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUPilaFIFOMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUFigura.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUFiguraMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUForma.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUFormaMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUArchivo.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUArchivoFisico.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUPaqueteIndice.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUSubArchivo.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGestorRed.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGlueLibJpegRead.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGlueLibJpegWrite.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBUtilFormatoAud.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBUtilFormatoOgg.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBZonaMemoriaConIndice.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBZonaMemoriaConIndiceLibres.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUSonido.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUSonidoMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUSonidoStream.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\NBGestorAnimadores.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAtlasMapa.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUAtlasMapaMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBits.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBitsLienzo.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUMapaBitsMutable.cpp" />
+    <ClCompile Include="..\..\..\src\cpp\AUFrameworkBaseStdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\ogg\bitwise.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\ogg\framing.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\analysis.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\barkmel.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\bitrate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\block.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\codebook.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\envelope.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\floor0.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\floor1.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\info.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\lookup.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\lpc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\lsp.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\mapping0.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\mdct.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\psy.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\registry.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\res0.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\sharedbook.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\smallft.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\synthesis.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\vorbisenc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\vorbisfile.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\c\vorbis\window.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\AUAlmacenDatos.h" />
+    <ClInclude Include="..\..\..\include\AUAlmacenDatosP.h" />
+    <ClInclude Include="..\..\..\include\AUArchivoCrypt.h" />
+    <ClInclude Include="..\..\..\include\AUArchivoEnBuffer.h" />
+    <ClInclude Include="..\..\..\include\AUArchivoEnBufferExterno.h" />
+    <ClInclude Include="..\..\..\include\AUBase64.h" />
+    <ClInclude Include="..\..\..\include\AUDatosCSVP.h" />
+    <ClInclude Include="..\..\..\include\AUDatosXMLMutableP.h" />
+    <ClInclude Include="..\..\..\include\AUDatosXMLP.h" />
+    <ClInclude Include="..\..\..\include\AUFrameworkBaseRegistro.h" />
+    <ClInclude Include="..\..\..\include\AUFuenteLineas.h" />
+    <ClInclude Include="..\..\..\include\AUFuenteMapaBits.h" />
+    <ClInclude Include="..\..\..\include\AUHilo.h" />
+    <ClInclude Include="..\..\..\include\AUHttpCliente.h" />
+    <ClInclude Include="..\..\..\include\AUHttpRespuesta.h" />
+    <ClInclude Include="..\..\..\include\AUHttpSolicitud.h" />
+    <ClInclude Include="..\..\..\include\AUMallaMapa.h" />
+    <ClInclude Include="..\..\..\include\AUMallaMapaMutable.h" />
+    <ClInclude Include="..\..\..\include\AUMapaBitsProps.h" />
+    <ClInclude Include="..\..\..\include\AUMapaBitsPropsMutable.h" />
+    <ClInclude Include="..\..\..\include\AUObjeto.h" />
+    <ClInclude Include="..\..\..\include\AUPngChuncks.h" />
+    <ClInclude Include="..\..\..\include\AUPngChuncksMutable.h" />
+    <ClInclude Include="..\..\..\include\AUSocket.h" />
+    <ClInclude Include="..\..\..\include\AUWebServiceConsulta.h" />
+    <ClInclude Include="..\..\..\include\AUWSFilesDownloader.h" />
+    <ClInclude Include="..\..\..\include\NBCajaPolar.h" />
+    <ClInclude Include="..\..\..\include\NBCurva.h" />
+    <ClInclude Include="..\..\..\include\NBEstadoCicloJuego.h" />
+    <ClInclude Include="..\..\..\include\NBFlujoLector.h" />
+    <ClInclude Include="..\..\..\include\NBGestorArchivos.h" />
+    <ClInclude Include="..\..\..\include\NBGestorAUObjetos.h" />
+    <ClInclude Include="..\..\..\include\NBGestorDatos.h" />
+    <ClInclude Include="..\..\..\include\NBGestorFuentes.h" />
+    <ClInclude Include="..\..\..\include\NBGestorFuentesTxtOrgDef.h" />
+    <ClInclude Include="..\..\..\include\NBGestorHilos.h" />
+    <ClInclude Include="..\..\..\include\NBGestorMemoria.h" />
+    <ClInclude Include="..\..\..\include\NBGestorPilaLlamadas.h" />
+    <ClInclude Include="..\..\..\include\AUArreglo.h" />
+    <ClInclude Include="..\..\..\include\AUArregloMutable.h" />
+    <ClInclude Include="..\..\..\include\AUArregloNativo.h" />
+    <ClInclude Include="..\..\..\include\AUArregloNativoMutable.h" />
+    <ClInclude Include="..\..\..\include\AUArregloNativoMutableP.h" />
+    <ClInclude Include="..\..\..\include\AUArregloNativoOrdenado.h" />
+    <ClInclude Include="..\..\..\include\AUArregloNativoOrdenadoMutable.h" />
+    <ClInclude Include="..\..\..\include\AUArregloNativoOrdenadoMutableP.h" />
+    <ClInclude Include="..\..\..\include\AUArregloNativoOrdenadoP.h" />
+    <ClInclude Include="..\..\..\include\AUArregloNativoP.h" />
+    <ClInclude Include="..\..\..\include\AUArregloOrdenado.h" />
+    <ClInclude Include="..\..\..\include\AUArregloOrdenadoMutable.h" />
+    <ClInclude Include="..\..\..\include\AUCacheNativaMutableP.h" />
+    <ClInclude Include="..\..\..\include\AUCadena.h" />
+    <ClInclude Include="..\..\..\include\AUCadenaMutable.h" />
+    <ClInclude Include="..\..\..\include\AUCadenaMutableP.h" />
+    <ClInclude Include="..\..\..\include\AUCadenaP.h" />
+    <ClInclude Include="..\..\..\include\AUDatosCSV.h" />
+    <ClInclude Include="..\..\..\include\AUDatosXML.h" />
+    <ClInclude Include="..\..\..\include\AUDatosXMLMutable.h" />
+    <ClInclude Include="..\..\..\include\AUDiccionario.h" />
+    <ClInclude Include="..\..\..\include\AUDiccionarioMutable.h" />
+    <ClInclude Include="..\..\..\include\AUDiccionarioTexto.h" />
+    <ClInclude Include="..\..\..\include\AUDiccionarioTextoMutable.h" />
+    <ClInclude Include="..\..\..\include\AUNumerico.h" />
+    <ClInclude Include="..\..\..\include\AUNumericoP.h" />
+    <ClInclude Include="..\..\..\include\AUPilaFIFO.h" />
+    <ClInclude Include="..\..\..\include\AUPilaFIFOMutable.h" />
+    <ClInclude Include="..\..\..\include\AUPilaFIFONativa.h" />
+    <ClInclude Include="..\..\..\include\AUPilaFIFONativaMutable.h" />
+    <ClInclude Include="..\..\..\include\AUPilaFIFONativaMutableP.h" />
+    <ClInclude Include="..\..\..\include\AUPilaFIFONativaP.h" />
+    <ClInclude Include="..\..\..\include\AUPilaNativa.h" />
+    <ClInclude Include="..\..\..\include\AUPilaNativaMutable.h" />
+    <ClInclude Include="..\..\..\include\AUPilaNativaMutableP.h" />
+    <ClInclude Include="..\..\..\include\AUPilaNativaP.h" />
+    <ClInclude Include="..\..\..\include\NBAngulo.h" />
+    <ClInclude Include="..\..\..\include\NBCajaAABB.h" />
+    <ClInclude Include="..\..\..\include\NBCharTextoGlyph.h" />
+    <ClInclude Include="..\..\..\include\NBColor.h" />
+    <ClInclude Include="..\..\..\include\NBFiguraVertice.h" />
+    <ClInclude Include="..\..\..\include\NBGestorRed.h" />
+    <ClInclude Include="..\..\..\include\NBGlueLibJpegRead.h" />
+    <ClInclude Include="..\..\..\include\NBGlueLibJpegWrite.h" />
+    <ClInclude Include="..\..\..\include\NBLinea.h" />
+    <ClInclude Include="..\..\..\include\NBMatriz.h" />
+    <ClInclude Include="..\..\..\include\NBObjeto.h" />
+    <ClInclude Include="..\..\..\include\NBParserJsonP.h" />
+    <ClInclude Include="..\..\..\include\NBParserXmlP.h" />
+    <ClInclude Include="..\..\..\include\NBPunto.h" />
+    <ClInclude Include="..\..\..\include\NBPuntoColor.h" />
+    <ClInclude Include="..\..\..\include\NBRectangulo.h" />
+    <ClInclude Include="..\..\..\include\NBTamano.h" />
+    <ClInclude Include="..\..\..\include\NBTransformaciones.h" />
+    <ClInclude Include="..\..\..\include\NBTriangulo.h" />
+    <ClInclude Include="..\..\..\include\AUFigura.h" />
+    <ClInclude Include="..\..\..\include\AUFiguraDefiniciones.h" />
+    <ClInclude Include="..\..\..\include\AUFiguraMutable.h" />
+    <ClInclude Include="..\..\..\include\AUForma.h" />
+    <ClInclude Include="..\..\..\include\AUFormaMutable.h" />
+    <ClInclude Include="..\..\..\include\AUArchivo.h" />
+    <ClInclude Include="..\..\..\include\AUArchivoFisico.h" />
+    <ClInclude Include="..\..\..\include\AUPaqueteIndice.h" />
+    <ClInclude Include="..\..\..\include\AUSubArchivo.h" />
+    <ClInclude Include="..\..\..\include\NBUtilFormatoAud.h" />
+    <ClInclude Include="..\..\..\include\NBUtilFormatoOgg.h" />
+    <ClInclude Include="..\..\..\include\NBUtilRasterizadorDefs.h" />
+    <ClInclude Include="..\..\..\include\NBUtilRasterizadorP.h" />
+    <ClInclude Include="..\..\..\include\NBZonaMemoriaConIndice.h" />
+    <ClInclude Include="..\..\..\include\NBZonaMemoriaConIndiceLibres.h" />
+    <ClInclude Include="..\..\..\include\AUSonido.h" />
+    <ClInclude Include="..\..\..\include\AUSonidoMutable.h" />
+    <ClInclude Include="..\..\..\include\AUSonidoStream.h" />
+    <ClInclude Include="..\..\..\include\NBAnimador.h" />
+    <ClInclude Include="..\..\..\include\NBGestorAnimadores.h" />
+    <ClInclude Include="..\..\..\include\AUAtlasMapa.h" />
+    <ClInclude Include="..\..\..\include\AUAtlasMapaMutable.h" />
+    <ClInclude Include="..\..\..\include\AUMapaBits.h" />
+    <ClInclude Include="..\..\..\include\AUMapaBitsLienzo.h" />
+    <ClInclude Include="..\..\..\include\AUMapaBitsMutable.h" />
+    <ClInclude Include="..\..\..\include\AUFrameworkBase.h" />
+    <ClInclude Include="..\..\..\include\AUFrameworkBaseDefiniciones.h" />
+    <ClInclude Include="..\..\..\include\AUFrameworkBaseStdAfx.h" />
+    <ClInclude Include="..\..\..\src\c\ogg\ogg.h" />
+    <ClInclude Include="..\..\..\src\c\ogg\os_types.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\backends.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\bitrate.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\books\coupled\res_books_51.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\books\coupled\res_books_stereo.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\books\floor\floor_books.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\books\uncoupled\res_books_uncoupled.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\codebook.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\codec.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\codec_internal.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\envelope.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\highlevel.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\lookup.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\lookup_data.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\lpc.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\lsp.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\masking.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\mdct.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\misc.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\floor_all.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\psych_11.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\psych_16.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\psych_44.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\psych_8.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_16.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_44.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_44p51.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_44u.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\residue_8.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_11.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_16.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_22.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_32.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_44.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_44p51.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_44u.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_8.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\modes\setup_X.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\os.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\psy.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\registry.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\scales.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\smallft.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\vorbisenc.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\vorbisfile.h" />
+    <ClInclude Include="..\..\..\src\c\vorbis\window.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>lib-auframework</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>?name?</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildCommand</key>
+					<value>make</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>${workspace_loc:/lib-auframework/Debug}</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>true</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/AUFrameworkBase.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFrameworkBase.h</locationURI>
+		</link>
+		<link>
+			<name>src/AUFrameworkBaseDefiniciones.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFrameworkBaseDefiniciones.h</locationURI>
+		</link>
+		<link>
+			<name>src/AUFrameworkBaseRegistro.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUFrameworkBaseRegistro.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/AUFrameworkBaseRegistro.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFrameworkBaseRegistro.h</locationURI>
+		</link>
+		<link>
+			<name>src/AUFrameworkBaseStdAfx.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUFrameworkBaseStdAfx.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/AUFrameworkBaseStdAfx.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFrameworkBaseStdAfx.h</locationURI>
+		</link>
+		<link>
+			<name>src/actualizarTodos.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-6-PROJECT_LOC%7D/actualizarTodos.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/animaciones/NBAnimador.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBAnimador.h</locationURI>
+		</link>
+		<link>
+			<name>src/animaciones/NBGestorAnimadores.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBGestorAnimadores.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/animaciones/NBGestorAnimadores.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBGestorAnimadores.h</locationURI>
+		</link>
+		<link>
+			<name>src/audio/AUSonido.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUSonido.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/audio/AUSonido.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUSonido.h</locationURI>
+		</link>
+		<link>
+			<name>src/audio/AUSonidoMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUSonidoMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/audio/AUSonidoMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUSonidoMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/audio/AUSonidoStream.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUSonidoStream.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/audio/AUSonidoStream.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUSonidoStream.h</locationURI>
+		</link>
+		<link>
+			<name>src/audio/NBUtilFormatoAud.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBUtilFormatoAud.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/audio/NBUtilFormatoAud.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBUtilFormatoAud.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/AUObjeto.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUObjeto.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/AUObjeto.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUObjeto.h</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/NBFlujoLector.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBFlujoLector.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/NBFlujoLector.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBFlujoLector.h</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/NBSHA1.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBSHA1.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/NBSHA1.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBSHA1.h</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUAtlasMapa.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUAtlasMapa.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUAtlasMapa.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUAtlasMapa.h</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUAtlasMapaMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUAtlasMapaMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUAtlasMapaMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUAtlasMapaMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUMapaBits.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUMapaBits.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUMapaBits.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUMapaBits.h</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUMapaBitsGlyphs.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUMapaBitsGlyphs.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUMapaBitsGlyphs.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUMapaBitsGlyphs.h</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUMapaBitsLienzo.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUMapaBitsLienzo.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUMapaBitsLienzo.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUMapaBitsLienzo.h</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUMapaBitsMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUMapaBitsMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/AUMapaBitsMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUMapaBitsMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/PngCRC.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/PngCRC.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/mapasDeBits/PngCRC.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/PngCRC.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUArchivo.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUArchivo.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUArchivo.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArchivo.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUArchivoFisico.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUArchivoFisico.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUArchivoFisico.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArchivoFisico.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUArchivoFisicoAPK.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUArchivoFisicoAPK.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUArchivoFisicoAPK.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArchivoFisicoAPK.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUArchivoMapeado.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUArchivoMapeado.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUArchivoMapeado.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArchivoMapeado.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUPaqueteIndice.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUPaqueteIndice.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUPaqueteIndice.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPaqueteIndice.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUSubArchivo.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUSubArchivo.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/archivos/AUSubArchivo.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUSubArchivo.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUAlmacenDatos.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUAlmacenDatos.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUAlmacenDatosP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUAlmacenDatosP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArreglo.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUArreglo.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArreglo.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArreglo.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUArregloMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloNativo.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloNativo.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloNativoMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloNativoMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloNativoMutableP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloNativoMutableP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloNativoOrdenado.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloNativoOrdenado.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloNativoOrdenadoMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloNativoOrdenadoMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloNativoOrdenadoMutableP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloNativoOrdenadoMutableP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloNativoOrdenadoP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloNativoOrdenadoP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloNativoP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloNativoP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloOrdenado.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUArregloOrdenado.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloOrdenado.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloOrdenado.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloOrdenadoMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUArregloOrdenadoMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUArregloOrdenadoMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUArregloOrdenadoMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUCacheNativaMutableP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUCacheNativaMutableP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUCadena.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUCadena.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUCadenaMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUCadenaMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUCadenaMutableP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUCadenaMutableP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUCadenaP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUCadenaP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDatosCSV.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDatosCSV.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDatosCSVP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDatosCSVP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDatosXML.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDatosXML.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDatosXMLMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDatosXMLMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDatosXMLMutableP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDatosXMLMutableP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDatosXMLP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDatosXMLP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDiccionario.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUDiccionario.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDiccionario.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDiccionario.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDiccionarioMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUDiccionarioMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDiccionarioMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDiccionarioMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDiccionarioTexto.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUDiccionarioTexto.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDiccionarioTexto.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDiccionarioTexto.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDiccionarioTextoMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUDiccionarioTextoMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUDiccionarioTextoMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUDiccionarioTextoMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUNumerico.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUNumerico.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUNumericoP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUNumericoP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaFIFO.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUPilaFIFO.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaFIFO.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaFIFO.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaFIFOMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUPilaFIFOMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaFIFOMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaFIFOMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaFIFONativa.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaFIFONativa.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaFIFONativaMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaFIFONativaMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaFIFONativaMutableP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaFIFONativaMutableP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaFIFONativaP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaFIFONativaP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaNativa.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaNativa.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaNativaMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaNativaMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaNativaMutableP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaNativaMutableP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/datos/AUPilaNativaP.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUPilaNativaP.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBAngulo.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBAngulo.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBCajaAABB.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBCajaAABB.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBCajaPolar.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBCajaPolar.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBCharTextoGlyph.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBCharTextoGlyph.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBColor.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBColor.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBCurva.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBCurva.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBEstadoCicloJuego.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBEstadoCicloJuego.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBFiguraVertice.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBFiguraVertice.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBLinea.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBLinea.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBMatriz.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBMatriz.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBPunto.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBPunto.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBPuntoColor.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBPuntoColor.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBRectangulo.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBRectangulo.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBTamano.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBTamano.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBTransformaciones.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBTransformaciones.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/estructuras/NBTriangulo.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBTriangulo.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/formas/AUFigura.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUFigura.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/formas/AUFigura.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFigura.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/formas/AUFiguraDefiniciones.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFiguraDefiniciones.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/formas/AUFiguraMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUFiguraMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/formas/AUFiguraMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFiguraMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/formas/AUForma.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUForma.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/formas/AUForma.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUForma.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/formas/AUFormaMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUFormaMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/formas/AUFormaMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFormaMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUFuenteGlyph.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUFuenteGlyph.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUFuenteGlyph.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFuenteGlyph.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUFuenteGlyphMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUFuenteGlyphMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUFuenteGlyphMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFuenteGlyphMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUFuenteMapaBits.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUFuenteMapaBits.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUFuenteMapaBits.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUFuenteMapaBits.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUGlyph.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUGlyph.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUGlyph.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUGlyph.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUGlyphMutable.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUGlyphMutable.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/fuentes/AUGlyphMutable.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUGlyphMutable.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorAUObjetos.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBGestorAUObjetos.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorAUObjetos.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBGestorAUObjetos.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorArchivos.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBGestorArchivos.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorArchivos.mm</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBGestorArchivos.mm</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorDatos.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBGestorDatos.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorDatos.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBGestorDatos.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorFuentes.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBGestorFuentes.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorFuentes.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBGestorFuentes.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorFuentesTxtOrgDef.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBGestorFuentesTxtOrgDef.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorMemoria.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBGestorMemoria.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorMemoria.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBGestorMemoria.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorPilaLlamadas.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBGestorPilaLlamadas.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorPilaLlamadas.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBGestorPilaLlamadas.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorRed.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBGestorRed.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/gestores/NBGestorRed.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBGestorRed.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/memoria/NBZonaMemoriaConIndice.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBZonaMemoriaConIndice.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/memoria/NBZonaMemoriaConIndice.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBZonaMemoriaConIndice.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/memoria/NBZonaMemoriaConIndiceLibres.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBZonaMemoriaConIndiceLibres.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/memoria/NBZonaMemoriaConIndiceLibres.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBZonaMemoriaConIndiceLibres.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/red/AUSocket.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/AUSocket.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/red/AUSocket.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/AUSocket.h</locationURI>
+		</link>
+		<link>
+			<name>src/comun/red/NBBase64.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBBase64.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/comun/red/NBBase64.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBBase64.h</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/fuentesOpenType/NBFuenteCFF.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBFuenteCFF.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/fuentesOpenType/NBFuenteCFF.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBFuenteCFF.h</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/fuentesOpenType/NBFuenteCFFDef.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBFuenteCFFDef.h</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/fuentesOpenType/NBFuenteOpenType.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/cpp/NBFuenteOpenType.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/fuentesOpenType/NBFuenteOpenType.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/NBFuenteOpenType.h</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jaricom.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jaricom.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcapimin.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcapimin.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcapistd.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcapistd.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcarith.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcarith.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jccoefct.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jccoefct.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jccolor.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jccolor.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcdctmgr.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcdctmgr.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jchuff.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jchuff.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcinit.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcinit.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcmainct.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcmainct.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcmarker.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcmarker.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcmaster.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcmaster.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcomapi.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcomapi.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcparam.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcparam.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcprepct.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcprepct.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jcsample.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jcsample.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jctrans.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jctrans.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdapimin.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdapimin.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdapistd.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdapistd.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdarith.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdarith.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdatadst.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdatadst.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdatasrc.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdatasrc.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdcoefct.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdcoefct.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdcolor.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdcolor.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jddctmgr.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jddctmgr.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdhuff.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdhuff.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdinput.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdinput.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdmainct.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdmainct.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdmarker.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdmarker.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdmaster.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdmaster.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdmerge.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdmerge.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdpostct.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdpostct.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdsample.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdsample.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jdtrans.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jdtrans.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jerror.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jerror.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jfdctflt.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jfdctflt.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jfdctfst.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jfdctfst.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jfdctint.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jfdctint.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jidctflt.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jidctflt.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jidctfst.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jidctfst.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jidctint.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jidctint.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jmemmgr.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jmemmgr.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jmemnobs.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jmemnobs.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jpeglib.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jpeglib.h</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jquant1.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jquant1.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jquant2.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jquant2.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/libjpeg/jutils.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libjpeg/jutils.c</locationURI>
+		</link>
+
+<link><name>src/extensiones/ogg/ogg/bitwise.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/ogg/bitwise.c</locationURI></link>
+<link><name>src/extensiones/ogg/ogg/framing.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/ogg/framing.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/analysis.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/analysis.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/bitrate.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/bitrate.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/block.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/block.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/codebook.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/codebook.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/envelope.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/envelope.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/floor0.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/floor0.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/floor1.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/floor1.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/info.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/info.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/lookup.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/lookup.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/lpc.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/lpc.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/lsp.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/lsp.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/mapping0.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/mapping0.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/mdct.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/mdct.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/psy.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/psy.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/registry.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/registry.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/res0.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/res0.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/sharedbook.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/sharedbook.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/smallft.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/smallft.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/synthesis.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/synthesis.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/vorbisenc.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/vorbisenc.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/vorbisfile.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/vorbisfile.c</locationURI></link>
+<link><name>src/extensiones/ogg/vorbis/window.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/vorbis/window.c</locationURI></link>
+
+<link><name>src/extensiones/libtiff/tif_aux.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_aux.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_close.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_close.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_codec.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_codec.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_color.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_color.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_compress.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_compress.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_dir.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_dir.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_dirinfo.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_dirinfo.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_dirread.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_dirread.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_dirwrite.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_dirwrite.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_dumpmode.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_dumpmode.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_error.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_error.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_extension.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_extension.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_fax3.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_fax3.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_fax3sm.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_fax3sm.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_flush.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_flush.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_getimage.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_getimage.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_jbig.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_jbig.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_jpeg_12.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_jpeg_12.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_jpeg.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_jpeg.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_luv.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_luv.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_lzma.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_lzma.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_lzw.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_lzw.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_next.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_next.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_ojpeg.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_ojpeg.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_open.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_open.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_packbits.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_packbits.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_pixarlog.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_pixarlog.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_predict.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_predict.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_print.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_print.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_read.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_read.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_strip.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_strip.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_swab.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_swab.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_thunder.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_thunder.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_tile.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_tile.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_unix.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_unix.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_version.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_version.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_warning.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_warning.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_write.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_write.c</locationURI></link>
+<link><name>src/extensiones/libtiff/tif_zip.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/libtiff/tif_zip.c</locationURI></link>
+
+<link><name>src/extensiones/geotiff/cpl_csv.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/cpl_csv.c</locationURI></link>
+<link><name>src/extensiones/geotiff/cpl_serv.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/cpl_serv.c</locationURI></link>
+<link><name>src/extensiones/geotiff/epsg_datum.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/epsg_datum.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/epsg_ellipse.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/epsg_ellipse.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/epsg_gcs.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/epsg_gcs.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/epsg_pcs.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/epsg_pcs.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/epsg_pm.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/epsg_pm.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/epsg_proj.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/epsg_proj.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/epsg_units.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/epsg_units.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/epsg_vertcs.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/epsg_vertcs.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_ctrans.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_ctrans.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_extra.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_extra.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_free.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_free.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_get.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_get.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_names.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_names.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_new.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_new.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_normalize.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_normalize.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_print.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_print.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_set.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_set.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_simpletags.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_simpletags.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_tiffp.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_tiffp.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_trans.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_trans.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geo_write.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geo_write.c</locationURI></link>
+<link><name>src/extensiones/geotiff/geokeys.inc</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/geokeys.inc</locationURI></link>
+<link><name>src/extensiones/geotiff/xtiff.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/geotiff/xtiff.c</locationURI></link>
+
+<link><name>src/extensiones/freetype/autofit/autofit.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/autofit/autofit.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftbase.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftbase.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftbbox.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftbbox.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftbdf.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftbdf.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftbitmap.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftbitmap.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftcid.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftcid.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftdebug.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftdebug.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftfstype.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftfstype.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftgasp.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftgasp.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftglyph.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftglyph.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftgxval.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftgxval.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftinit.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftinit.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftlcdfil.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftlcdfil.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftmm.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftmm.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftotval.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftotval.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftpatent.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftpatent.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftpfr.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftpfr.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftstroke.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftstroke.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftsynth.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftsynth.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftsystem.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftsystem.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/fttype1.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/fttype1.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftwinfnt.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftwinfnt.c</locationURI></link>
+<link><name>src/extensiones/freetype/base/ftxf86.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/base/ftxf86.c</locationURI></link>
+<link><name>src/extensiones/freetype/cff/cff.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/cff/cff.c</locationURI></link>
+<link><name>src/extensiones/freetype/gzip/ftgzip.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/gzip/ftgzip.c</locationURI></link>
+<link><name>src/extensiones/freetype/pshinter/pshinter.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/pshinter/pshinter.c</locationURI></link>
+<link><name>src/extensiones/freetype/psnames/psnames.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/psnames/psnames.c</locationURI></link>
+<link><name>src/extensiones/freetype/raster/raster.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/raster/raster.c</locationURI></link>
+<link><name>src/extensiones/freetype/sfnt/sfnt.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/sfnt/sfnt.c</locationURI></link>
+<link><name>src/extensiones/freetype/smooth/ftgrays.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/smooth/ftgrays.c</locationURI></link>
+<link><name>src/extensiones/freetype/smooth/ftsmooth.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/smooth/ftsmooth.c</locationURI></link>
+<link><name>src/extensiones/freetype/smooth/ftspic.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/smooth/ftspic.c</locationURI></link>
+<link><name>src/extensiones/freetype/smooth/smooth.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/smooth/smooth.c</locationURI></link>
+<link><name>src/extensiones/freetype/truetype/truetype.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/truetype/truetype.c</locationURI></link>
+<link><name>src/extensiones/freetype/winfonts/winfnt.c</name><type>1</type><locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/freetype/src/winfonts/winfnt.c</locationURI></link>
+
+
+		<link>
+			<name>src/extensiones/zlib/easyzlib.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/src/c/easyzlib.c</locationURI>
+		</link>
+		<link>
+			<name>src/extensiones/zlib/easyzlib.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/include/easyzlib.h</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:"
+      name = "Dependencies">
+      <FileRef
+         location = "group:../../../../sys-nbframework/lib-nbframework-src/projects/xcode/nbframework/nbframework.xcodeproj">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:lib-auframework/lib-auframework.xcodeproj">
+   </FileRef>
+</Workspace>
