@@ -22,6 +22,14 @@ This library can be used with:
 
 to build a visual app around this core.
 
+# Spanish Language
+
+Created by Marcos Ortega.
+
+This library was designed in spanish, intended to be used by latin-american university students to build academic and professional projects.
+
+sys-nbframework-src is an english and professionally-intended evolition of this library. 
+
 # Deprecated
 
 It is deprecated; its fucntionalities are/were moved to lib-nbframework-src.

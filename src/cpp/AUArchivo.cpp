@@ -28,8 +28,8 @@ void AUArchivo_close_(void** obj);
 void AUArchivo_lock_(void* obj);
 void AUArchivo_unlock_(void* obj);
 BOOL AUArchivo_isOpen_(const void* obj);
-UI32 AUArchivo_read_(void* obj, void* dst, const UI32 blockSize, const UI32 blocks, const SI64* curPos);
-UI32 AUArchivo_write_(void* obj, const void* src, const UI32 blockSize, const UI32 blocks, const SI64* curPos);
+SI32 AUArchivo_read_(void* obj, void* dst, const UI32 dstSz, const SI64* curPos);
+SI32 AUArchivo_write_(void* obj, const void* src, const UI32 dstSz, const SI64* curPos);
 BOOL AUArchivo_seek_(void* obj, const SI64 pos, const ENNBFileRelative relativeTo, const SI64* curPos);
 SI64 AUArchivo_curPos_(const void* obj);
 BOOL AUArchivo_flush_(void* obj);
@@ -66,12 +66,12 @@ BOOL AUArchivo_isOpen_(const void* obj){
 	return TRUE;
 }
 
-UI32 AUArchivo_read_(void* obj, void* dst, const UI32 blockSize, const UI32 blocks, const SI64* curPos){
-	return ((AUArchivo*)obj)->leer(dst, blockSize, blocks, ((AUArchivo*)obj));
+SI32 AUArchivo_read_(void* obj, void* dst, const UI32 dstSz, const SI64* curPos){
+	return ((AUArchivo*)obj)->leer(dst, 1, dstSz, ((AUArchivo*)obj));
 }
 
-UI32 AUArchivo_write_(void* obj, const void* src, const UI32 blockSize, const UI32 blocks, const SI64* curPos){
-	return ((AUArchivo*)obj)->escribir(src, blockSize, blocks, ((AUArchivo*)obj));
+SI32 AUArchivo_write_(void* obj, const void* src, const UI32 dstSz, const SI64* curPos){
+	return ((AUArchivo*)obj)->escribir(src, 1, dstSz, ((AUArchivo*)obj));
 }
 
 BOOL AUArchivo_seek_(void* obj, const SI64 pos, const ENNBFileRelative relativeTo, const SI64* curPos){

@@ -11,7 +11,7 @@
 
 #include "nb/NBFrameworkPch.h"
 #include "nb/core/NBDatetime.h"	//Used by NBASSERT AND PRINTF_*
-#include "nb/core/NBProcess.h"	//Used by NBASSERT
+#include "nb/core/NBMngrProcess.h"	//Used by NBASSERT
 
 #if defined(WIN32) || defined(_WIN32)
 //#define AU_USE_MEMORY_LEAK_DETECTION

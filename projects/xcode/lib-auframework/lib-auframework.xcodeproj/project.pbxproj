@@ -1375,8 +1375,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/c";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../src/c $(SRCROOT)/../../../src/c/vorbis $(SRCROOT)/../../../src/c/libjpeg $(SRCROOT)/../../../include";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-nbframework/sys-nbframework-src/include $(SRCROOT)/../../../src/c $(SRCROOT)/../../../src/c/vorbis $(SRCROOT)/../../../src/c/libjpeg $(SRCROOT)/../../../include";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -1389,8 +1389,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/c";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../src/c $(SRCROOT)/../../../src/c/vorbis $(SRCROOT)/../../../src/c/libjpeg $(SRCROOT)/../../../include";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-nbframework/sys-nbframework-src/include $(SRCROOT)/../../../src/c $(SRCROOT)/../../../src/c/vorbis $(SRCROOT)/../../../src/c/libjpeg $(SRCROOT)/../../../include";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;

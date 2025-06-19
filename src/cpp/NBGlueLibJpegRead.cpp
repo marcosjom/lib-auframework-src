@@ -38,7 +38,7 @@ void NBGlueLibJpegRead_linkToMethods(){
 
 typedef struct STNBGlueLibJpegRead_ {
 	AUArchivo*		stream;
-	STNBFile		stream2;
+    STNBFileRef     stream2;
 	STNBJpegRead	jpeg;
 } STNBGlueLibJpegRead;
 
@@ -51,14 +51,14 @@ void* NBGlueLibJpegRead_stateCreate(void* param, AUArchivo* stream){
 	}
 	{
 		IFileItf fileItf = AUArchivo::getFileItf();
-		NBFile_initWithItf(&obj->stream2, &fileItf, stream, TRUE, TRUE);
+        NBFile_openAsItf(obj->stream2, &fileItf, stream);
 #		ifdef NB_CONFIG_INCLUDE_ASSERTS
-		NBFile_dbgSetPathRef(&obj->stream2, "NBGlueLibJpegRead_stateCreate");
+		NBFile_dbgSetPathRef(obj->stream2, "NBGlueLibJpegRead_stateCreate");
 #		endif
 	}
 	{
 		NBJpegRead_init(&obj->jpeg);
-		NBJpegRead_feedStart(&obj->jpeg, &obj->stream2);
+		NBJpegRead_feedStart(&obj->jpeg, obj->stream2);
 	}
 	return obj;
 }
