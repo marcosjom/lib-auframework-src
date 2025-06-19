@@ -1,11 +1,8 @@
 # Moved to Github
 
-This repository was moved from another service to Github.
+This repository was moved to Github. My original repository has ~7 years of activity from 2016-04-27 to 2023-01-03:
 
-The original repository has activity:
-
-- from  2016-04-27
-- up to 2023-01-03
+https://bitbucket.org/nicaraguabinary/lib-auframework-src/
   
 # lib-auframework-src
 
