@@ -35,9 +35,7 @@ For simplicity, create this folder structure:
 
 You can create your own folders structure but it will require to update some paths in the projects and scripts.
 
-The following steps will create static libraries to be linked in your own project.
-
-In your project you should add a reference to each `built-libray` and its `include` folder.
+The following steps will create static libraries. In your project you should link to each `static-libray` and add a reference to its `include` folder.
 
 ## Windows
 
@@ -56,7 +54,7 @@ cd lib-auframework-src
 make NB_CFG_HOST=Android
 ```
 
-Check each project's' `Makefile` and `MakefileProject.mk` files, and the [MakefileFuncs.mk](https://github.com/marcosjom/sys-nbframework-src/blob/main/MakefileFuncs.mk) to understand the `make` process, including the accepted flags and targets. 
+Check each project's `Makefile` and `MakefileProject.mk` files, and the [MakefileFuncs.mk](https://github.com/marcosjom/sys-nbframework-src/blob/main/MakefileFuncs.mk) to understand the `make` process, including the accepted flags and targets. 
 
 ## Linux and Others
 
@@ -67,10 +65,10 @@ cd lib-auframework-src
 make
 ```
 
-Check each project's' `Makefile` and `MakefileProject.mk` files, and the [MakefileFuncs.mk](https://github.com/marcosjom/sys-nbframework-src/blob/main/MakefileFuncs.mk) to understand the `make` process, including the accepted flags and targets.
+Check each project's `Makefile` and `MakefileProject.mk` files, and the [MakefileFuncs.mk](https://github.com/marcosjom/sys-nbframework-src/blob/main/MakefileFuncs.mk) to understand the `make` process, including the accepted flags and targets.
 
 # Contact
 
-Send me a message to [me@mortegam.com](mailto:me@mortegam.com) or visit [mortegam.com](https://mortegam.com/) for more information and visual examples of projects built with this libray.
+Visit [mortegam.com](https://mortegam.com/) for more information and visual examples of projects built with this libray.
 
 May you be surrounded by passionate and curious people. :-)
