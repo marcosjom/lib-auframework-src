@@ -27,11 +27,11 @@ It is deprecated; its purpose and features are being moved to [sys-nbframework-s
 
 For simplicity, create this folder structure:
 
-my_folder
-   |- sys-auframework
-      |- [lib-auframework-src](https://github.com/marcosjom/lib-auframework-src)
-   |- sys-nbframework
-      |- [sys-nbframework-src](https://github.com/marcosjom/sys-nbframework-src)
+my_folder<br/>
+   |- sys-auframework<br/>
+      |- [lib-auframework-src](https://github.com/marcosjom/lib-auframework-src)<br/>
+   |- sys-nbframework<br/>
+      |- [sys-nbframework-src](https://github.com/marcosjom/sys-nbframework-src)<br/>
 
 You can create your own folders structure but it will require to update some paths in the projects and scripts.
 
