@@ -13,41 +13,41 @@ This library depends of:
 
 # Spanish Language
 
-Created by Marcos Ortega.
+Created by [Marcos Ortega](https://mortegam.com/).
 
 This library was designed in spanish, intended to be used by latin-american university students to build academic and professional projects.
 
-sys-nbframework-src is an english and professionally-intended evolition of this library. 
+[sys-nbframework-src](https://github.com/marcosjom/sys-nbframework-src) is a professionally-intended evolition of this library, in english.
 
 # Deprecated
 
-It is deprecated; its fucntionalities are/were moved to lib-nbframework-src.
+It is deprecated; its purpose and features are being moved to [sys-nbframework-src](https://github.com/marcosjom/sys-nbframework-src).
 
 # How to compile
 
 For simplicity, create this folder structure:
 
-```
 my_folder
    |- sys-auframework
       |- [lib-auframework-src](https://github.com/marcosjom/lib-auframework-src)
    |- sys-nbframework
       |- [sys-nbframework-src](https://github.com/marcosjom/sys-nbframework-src)
-```
 
 You can create your own folders structure but it will require to update some paths in the projects and scripts.
 
-The following steps will create static libraries to be linked in your own project. You should add a reference the each 'include' folder in yoru project.
+The following steps will create static libraries to be linked in your own project.
 
-##Windows
+In your project you should add a reference to each `built-libray` and its `include` folder.
 
-Open `projects/visual-studio/auframework.sln`and compile target.
+## Windows
 
-##MacOS and iOS
+Open `projects/visual-studio/auframework.sln` and compile the desired target.
 
-Open `projects/xcode/lib-auframework.xcworkspace`and compile target.
+## MacOS and iOS
 
-##Android
+Open `projects/xcode/lib-auframework.xcworkspace` and compile the desired target.
+
+## Android
 
 In a terminal:
 
@@ -56,9 +56,9 @@ cd lib-auframework-src
 make NB_CFG_HOST=Android
 ```
 
-Check the [MakefileFuncs.mk](https://github.com/marcosjom/sys-nbframework-src/blob/main/MakefileFuncs.mk) file, and the `Makefile` and `MakefileProject.mk` files of each project to understand the `make` process, includint the accepted flags. 
+Check each project's' `Makefile` and `MakefileProject.mk` files, and the [MakefileFuncs.mk](https://github.com/marcosjom/sys-nbframework-src/blob/main/MakefileFuncs.mk) to understand the `make` process, including the accepted flags and targets. 
 
-##Linux and Others
+## Linux and Others
 
 In a terminal:
 
@@ -66,10 +66,11 @@ In a terminal:
 cd lib-auframework-src
 make
 ```
-Check the [MakefileFuncs.mk](https://github.com/marcosjom/sys-nbframework-src/blob/main/MakefileFuncs.mk) file, and the `Makefile` and `MakefileProject.mk` files of each project to understand the `make` process, includint the accepted flags.
 
-##Contact
+Check each project's' `Makefile` and `MakefileProject.mk` files, and the [MakefileFuncs.mk](https://github.com/marcosjom/sys-nbframework-src/blob/main/MakefileFuncs.mk) to understand the `make` process, including the accepted flags and targets.
 
-Send me a message [me@mortegam.com](mailto:me@mortegam.com) or visit [mortegam.com](https://mortegam.com/) for more information.
+# Contact
+
+Send me a message to [me@mortegam.com](mailto:me@mortegam.com) or visit [mortegam.com](https://mortegam.com/) for more information and visual examples of projects built with this libray.
 
 May you be surrounded by passionate and curious people. :-)
