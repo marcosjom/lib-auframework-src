@@ -17,7 +17,7 @@ Created by [Marcos Ortega](https://mortegam.com/).
 
 This library was designed in spanish, intended to be used by latin-american university students to build academic and professional projects.
 
-[sys-nbframework-src](https://github.com/marcosjom/sys-nbframework-src) is a professionally-intended evolition of this library, in english.
+[sys-nbframework-src](https://github.com/marcosjom/sys-nbframework-src) is a professionally-intended evolution of this library, in english.
 
 # Deprecated
 
