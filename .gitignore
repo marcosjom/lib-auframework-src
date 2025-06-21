@@ -31,3 +31,5 @@ lib-auframework.sdf
 /src/c/vorbis
 /src/c/geotiff
 
+/src/c/geotiff__
+/src/c/libtiff__

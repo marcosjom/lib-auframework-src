@@ -17,7 +17,7 @@ $(LOCAL_PATH)/../../src/c/ \
 $(LOCAL_PATH)/../../src/c/vorbis/ \
 $(LOCAL_PATH)/../../src/c/libjpeg/ \
 $(LOCAL_PATH)/../../src/c/geotiff/ \
-$(LOCAL_PATH)/../../../../sys-nbframework/lib-nbframework-src/include
+$(LOCAL_PATH)/../../../../sys-nbframework/sys-nbframework-src/include
 
 NB_PENDING_C_INCLUDES	:= \
 $(LOCAL_PATH)/../../src/c/freetype/include/ \

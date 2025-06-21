@@ -12,7 +12,7 @@ NB_PROJECT_NAME           := auframework
 NB_PROJECT_CXXFLAGS       := -std=c++11
 
 NB_PROJECT_INCLUDES       := \
-   ../../sys-nbframework/lib-nbframework-src/include \
+   ../../sys-nbframework/sys-nbframework-src/include \
    include
 
 #-------------------------
