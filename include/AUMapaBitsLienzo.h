@@ -86,10 +86,10 @@ class AUMapaBitsLienzo : public AUMapaBits {
 			bool colorAntesPintado;		//indica si el color a la izquierda/arriba ha sido pintado
 			bool colorDespuesPintado;	//indica si el color a la derecha/abajo ha sido pintado
 			bool operator==(const Interseccion &otro) const {
-				return (x == otro.x && y == otro.y && colorAntes==otro.colorAntes && colorDespues==otro.colorDespues && colorAntesPintado==otro.colorAntesPintado && colorDespuesPintado==otro.colorDespuesPintado && mapaBitsAntes==otro.mapaBitsAntes && mapaBitsDespues==otro.mapaBitsDespues);
+				return (x == otro.x && y == otro.y && colorAntes.v32==otro.colorAntes.v32 && colorDespues.v32==otro.colorDespues.v32 && colorAntesPintado==otro.colorAntesPintado && colorDespuesPintado==otro.colorDespuesPintado && mapaBitsAntes==otro.mapaBitsAntes && mapaBitsDespues==otro.mapaBitsDespues);
 			}
 			bool operator!=(const Interseccion &otro) const {
-				return !(x == otro.x && y == otro.y && colorAntes==otro.colorAntes && colorDespues==otro.colorDespues && colorAntesPintado==otro.colorAntesPintado && colorDespuesPintado==otro.colorDespuesPintado && mapaBitsAntes==otro.mapaBitsAntes && mapaBitsDespues==otro.mapaBitsDespues);
+				return !(x == otro.x && y == otro.y && colorAntes.v32==otro.colorAntes.v32 && colorDespues.v32==otro.colorDespues.v32 && colorAntesPintado==otro.colorAntesPintado && colorDespuesPintado==otro.colorDespuesPintado && mapaBitsAntes==otro.mapaBitsAntes && mapaBitsDespues==otro.mapaBitsDespues);
 			}
 		};
 		struct STInterseccionMonoCromatica {

@@ -17,10 +17,10 @@ struct NBPuntoColor {
 	NBColor8 color;
 	//
 	bool operator==(const NBPuntoColor &otro) const {
-		return (coordenada==otro.coordenada && color==otro.color);
+		return (coordenada==otro.coordenada && color.v32==otro.color.v32);
 	}
 	bool operator!=(const NBPuntoColor &otro) const {
-		return !(coordenada==otro.coordenada && color==otro.color);
+		return !(coordenada==otro.coordenada && color.v32==otro.color.v32);
 	}
 };
 

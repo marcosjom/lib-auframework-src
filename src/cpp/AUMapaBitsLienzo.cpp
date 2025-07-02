@@ -2095,8 +2095,8 @@ bool AUMapaBitsLienzo::dibujarLineasFigura(AUFigura* figura, float escalaX, floa
 	bool exito = false;
 	formatearMascara(false);
 	UI32 i; AUArregloNativoP<NBFiguraVertice>* vertices = figura->vertices();
-	NBColor8 colorAnterior = NBColor8::colorTransparente();
-	NBFiguraVertice cacheVerticeAnterior = vertices->elemento[0]; 
+    NBColor8 colorAnterior = STNBColor8_Zero;
+	NBFiguraVertice cacheVerticeAnterior = vertices->elemento[0];
 	NBFIGURAVERTICE_ESCALAR(cacheVerticeAnterior, cacheVerticeAnterior, escalaX, escalaY);
 	NBFIGURAVERTICE_TRASLADAR(cacheVerticeAnterior, cacheVerticeAnterior, trasladoX, trasladoY);
 	if(cacheVerticeAnterior.estiloLineaExplicito == false){

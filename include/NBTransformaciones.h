@@ -9,7 +9,11 @@
 #ifndef NBTRANSFORMACIONESP_H_INCLUIDO
 #define NBTRANSFORMACIONESP_H_INCLUIDO
 
-template <class TIPODATO> 
+#include "nb/scene/NBScnTransform.h"
+
+/*
+//Moved to "nb/scene/NBScnTransform.h"
+template <class TIPODATO>
 struct NBTransformacionesP {
 	TIPODATO escalaX;
 	TIPODATO escalaY;
@@ -26,5 +30,6 @@ struct NBTransformacionesP {
 
 typedef NBTransformacionesP<FLOAT>	NBTransformaciones;
 typedef NBTransformacionesP<FLOAT>	NBTransformacionesF;
+*/
 
 #endif

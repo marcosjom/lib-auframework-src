@@ -59,6 +59,8 @@
 		2C6719E217258B2900367263 /* NBGestorRed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6719DF17258B2900367263 /* NBGestorRed.cpp */; };
 		2C6719E917258B3B00367263 /* AUSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6719E517258B3B00367263 /* AUSocket.cpp */; };
 		2C6719EA17258B3B00367263 /* AUSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6719E517258B3B00367263 /* AUSocket.cpp */; };
+		2C702E902E133060009BFCAB /* NBColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C702E8F2E133060009BFCAB /* NBColor.cpp */; };
+		2C702E912E133060009BFCAB /* NBColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C702E8F2E133060009BFCAB /* NBColor.cpp */; };
 		2C8963F423553A4500A4948D /* AUArchivoNativo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8963F223553A4500A4948D /* AUArchivoNativo.cpp */; };
 		2C8963F523553A4500A4948D /* AUArchivoNativo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8963F223553A4500A4948D /* AUArchivoNativo.cpp */; };
 		2C8D72EE1AE6AD8D009DDCCF /* AUPngChuncksMutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D72ED1AE6AD8D009DDCCF /* AUPngChuncksMutable.cpp */; };
@@ -335,6 +337,7 @@
 		2C6719E017258B2900367263 /* NBGestorRed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBGestorRed.h; path = ../../../include/NBGestorRed.h; sourceTree = SOURCE_ROOT; };
 		2C6719E517258B3B00367263 /* AUSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUSocket.cpp; path = ../../../src/cpp/AUSocket.cpp; sourceTree = SOURCE_ROOT; };
 		2C6719E617258B3B00367263 /* AUSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUSocket.h; path = ../../../include/AUSocket.h; sourceTree = SOURCE_ROOT; };
+		2C702E8F2E133060009BFCAB /* NBColor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = NBColor.cpp; path = "/Users/mortegam/Desktop/NIBSA_proyectos/CltMarcosOrtega/sys-auframework/lib-auframework-src/src/cpp/NBColor.cpp"; sourceTree = "<absolute>"; };
 		2C70EBCB1B18D46700369B36 /* NBMargenes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBMargenes.h; path = ../../../include/NBMargenes.h; sourceTree = "<group>"; };
 		2C75FEBD145F36C000BCFECB /* AUDatosXMLP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUDatosXMLP.h; path = ../../../include/AUDatosXMLP.h; sourceTree = SOURCE_ROOT; };
 		2C75FEBE145F36C000BCFECB /* AUDatosXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUDatosXML.h; path = ../../../include/AUDatosXML.h; sourceTree = SOURCE_ROOT; };
@@ -933,6 +936,8 @@
 		B3A10C95142C15990070BFCA /* estructuras */ = {
 			isa = PBXGroup;
 			children = (
+				B3A10D05142C15F10070BFCA /* NBColor.h */,
+				2C702E8F2E133060009BFCAB /* NBColor.cpp */,
 				2C85EB451487FEB4008A2EF1 /* NBAngulo.h */,
 				B3A10D17142C15F10070BFCA /* NBPunto.h */,
 				2C31354F159BF22F0090FE7E /* NBPuntoColor.h */,
@@ -944,7 +949,6 @@
 				2CDEC1661453A90D0001D198 /* NBCajaAABB.h */,
 				2CAC3B55164F4E8D00F74A5C /* NBCajaPolar.h */,
 				B3A10D18142C15F10070BFCA /* NBRectangulo.h */,
-				B3A10D05142C15F10070BFCA /* NBColor.h */,
 				B3A10D07142C15F10070BFCA /* NBFiguraVertice.h */,
 				B3A10D04142C15F10070BFCA /* NBCharTextoGlyph.h */,
 				B3A10D13142C15F10070BFCA /* NBMatriz.h */,
@@ -1141,6 +1145,7 @@
 			files = (
 				2C1D409F1C38C36C00D89E2F /* AUHttpSolicitud.cpp in Sources */,
 				2C05F31B1ADD807E00331B09 /* AUArchivoEnBuffer.cpp in Sources */,
+				2C702E912E133060009BFCAB /* NBColor.cpp in Sources */,
 				2C1D409D1C38C36C00D89E2F /* AUHttpCliente.cpp in Sources */,
 				2C1FFF4C1C6A5A1100EA7104 /* AUWSFilesDownloader.cpp in Sources */,
 				2C05F32C1AE5B74D00331B09 /* AUPngChuncks.cpp in Sources */,
@@ -1247,6 +1252,7 @@
 				2CF91C6C1BC46B3C0045669A /* NBGestorHilos.cpp in Sources */,
 				B3A10D24142C15F20070BFCA /* AUArreglo.cpp in Sources */,
 				2C3C540319D91DD600B6029D /* AUArchivoCrypt.cpp in Sources */,
+				2C702E902E133060009BFCAB /* NBColor.cpp in Sources */,
 				B3A10D26142C15F20070BFCA /* AUArregloMutable.cpp in Sources */,
 				B3A10D2C142C15F20070BFCA /* AUAtlasMapa.cpp in Sources */,
 				B3A10D2E142C15F20070BFCA /* AUAtlasMapaMutable.cpp in Sources */,

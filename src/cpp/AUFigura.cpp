@@ -243,7 +243,7 @@ bool AUFigura::interpretarXmlInterno(AUFigura* cargarEn, const AUDatosXML* datos
 					v.anchoLinea			= datosXml->nodoHijo("aLna", 0.0f, vertice);
 					const sNodoXML* colorLinea	= datosXml->nodoHijo("cLna", vertice);
 					if(colorLinea == NULL){
-						v.colorLinea		= NBColor8::color(0, 0, 0, 0);
+						v.colorLinea		= STNBColor8_Zero;
 					} else {
 						v.colorLinea.r		= datosXml->nodoHijo("r", 0, colorLinea);
 						v.colorLinea.g		= datosXml->nodoHijo("g", 0, colorLinea);
@@ -252,7 +252,7 @@ bool AUFigura::interpretarXmlInterno(AUFigura* cargarEn, const AUDatosXML* datos
 					}
 					const sNodoXML* colorReIzq	= datosXml->nodoHijo("rIzq", vertice);
 					if(colorReIzq == NULL){
-						v.rellenoIzquierda			= NBColor8::color(0, 0, 0, 0);
+                        v.rellenoIzquierda			= STNBColor8_Zero;
 					} else {
 						v.rellenoIzquierda.r		= datosXml->nodoHijo("r", 0, colorReIzq);
 						v.rellenoIzquierda.g		= datosXml->nodoHijo("g", 0, colorReIzq);
@@ -261,7 +261,7 @@ bool AUFigura::interpretarXmlInterno(AUFigura* cargarEn, const AUDatosXML* datos
 					}
 					const sNodoXML* colorReDer	= datosXml->nodoHijo("rDer", vertice);
 					if(colorReIzq == NULL){
-						v.rellenoDerecha			= NBColor8::color(0, 0, 0, 0);
+						v.rellenoDerecha		= STNBColor8_Zero;
 					} else {
 						v.rellenoDerecha.r		= datosXml->nodoHijo("r", 0, colorReDer);
 						v.rellenoDerecha.g		= datosXml->nodoHijo("g", 0, colorReDer);
