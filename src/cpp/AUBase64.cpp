@@ -1,7 +1,6 @@
 
 #include "AUFrameworkBaseStdAfx.h"
 #include "AUBase64.h"
-#include "nb/crypto/NBBase64.h"
 
 AUBase64::AUBase64() : AUObjeto(){
 	AU_GESTOR_PILA_LLAMADAS_PUSH("AUBase64::AUBase64")

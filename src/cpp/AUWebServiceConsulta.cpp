@@ -533,74 +533,6 @@ void AUWebServiceConsulta::httpClienteCambioEstado(AUHttpCliente* httpCliente, c
 			PRINTF_ERROR("No se pudo consumir el final del contenido de la respuesta.\n"); //NBASSERT(false)
 			_estadoActual		= ENHttpConsultaEstado_Error;
 			_cnxResponseError	= true;
-			//Analizar respuesta
-			/*AUHttpRespuesta* curResp = _cltHttpActual->respuestaActual();
-			 curResp->buffContenidoLock();
-			 const char* strContenido= curResp->buffContenido()->str();
-			 UI32 tamContenido		= curResp->buffContenido()->tamano();
-			 //Decriptar contenido
-			 AUCadenaLargaMutable8* strDecrypt = NULL;
-			 if(_iMapaCryptActual >= 0){
-			 strDecrypt = new(ENMemoriaTipo_Temporal) AUCadenaLargaMutable8();
-			 const char* arregloUsar = &_decriptMap[_iMapaCryptActual * 64]; NBASSERT(arregloUsar != NULL)
-			 SI32 iPos = 0; const SI32 tam = tamContenido; const char* str = strContenido;
-			 for(iPos = 0; iPos < tam; iPos++){
-				char c = str[iPos];
-				if(c == '%'){
-			 NBASSERT((iPos + 2) < tam)
-			 const char c2 = ((iPos + 1) < tam ? str[iPos + 1] : ' ');
-			 const char c3 = ((iPos + 2) < tam ? str[iPos + 2] : ' ');
-			 if(c2 == '3' && (c3 == 'D' || c3 == 'd')){
-			 c = '='; iPos += 2;
-			 } else if(c2 == '2' && (c3 == 'B' || c3 == 'b')){
-			 c = '+'; iPos += 2;
-			 } else { NBASSERT(false) }
-				}
-				if(c == '='){
-			 strDecrypt->agregar(c);
-				} else {
-			 UI16 iBase64 = 0;
-			 if(c >= 65 && c <= 90){			iBase64 = 0 + (c - 65);
-			 } else if(c >= 97 && c <= 122){	iBase64 = 26 + (c - 97);
-			 } else if(c >= 48 && c <= 57){	iBase64 = 52 + (c - 48);
-			 } else if(c == 43){				iBase64 = 62 + (c - 43);
-			 } else if(c == 47){				iBase64 = 63 + (c - 47);
-			 } else {
-			 NBASSERT(false)
-			 }
-			 strDecrypt->agregar(NBBase64Vals[arregloUsar[iBase64]]);
-			 / *UI16 iE; const UI16 conteoE = sizeof(NBBase64Vals) / sizeof(NBBase64Vals[0]);
-			 for(iE = 0; iE < conteoE; iE++){
-			 if(c == arregloUsar[iE]){
-			 strDecrypt->agregar((const char)NBBase64Vals[iE]);
-			 break;
-			 }
-			 } NBASSERT(iE < conteoE)* /
-				}
-			 }
-			 strContenido = strDecrypt->str();
-			 tamContenido = strDecrypt->tamano();
-			 }
-			 AUCadenaLargaMutable8* strDesdeBase64 = NULL;
-			 if(_iMapaCryptActual >= 0){
-			 //Interpretar Base64
-			 strDesdeBase64 = new(ENMemoriaTipo_Temporal) AUCadenaLargaMutable8();
-			 AUBase64::decodificaBase64(strContenido, tamContenido, strDesdeBase64);
-			 strContenido = strDesdeBase64->str();
-			 tamContenido = strDesdeBase64->tamano();
-			 }
-			 //
-			 #		ifdef CONFIG_NB_INCLUIR_VALIDACIONES_ASSERT
-			 if(_respuestaGeneral.dbgCopiaRespuesta != NULL) _respuestaGeneral.dbgCopiaRespuesta->liberar(NB_RETENEDOR_THIS);
-			 _respuestaGeneral.dbgCopiaRespuesta = new(this) AUCadenaLarga8(strContenido);
-			 #		endif
-			 / *if(!_datosXML->cargaDatosXMLDesdeCadena(strContenido)){
-			 PRINTF_ERROR("Cargando respuesta XML de reporte: '%s'.\n", strContenido); NBASSERT(false)
-			 } else {* /
-			 _datosXML->loadXMLStreamConsumeData(strContenido, tamContenido);
-			 */
-			//
-			//
 		} else if(!_datosXML->loadXMLStreamEnd()){
 			PRINTF_ERROR("Cargando respuesta XML de reporte.\n"); //NBASSERT(false)
 			_estadoActual = ENHttpConsultaEstado_Error;
@@ -735,13 +667,6 @@ bool AUWebServiceConsulta::privConsumeCurrentResponse(const bool isFinal){
 							break;
 						}
 						_rqStrTmpDecrypt.agregar(NBBase64_token(arregloUsar[iBase64]));
-						/*UI16 iE; const UI16 conteoE = sizeof(NBBase64Vals) / sizeof(NBBase64Vals[0]);
-						 for(iE = 0; iE < conteoE; iE++){
-						 if(c == arregloUsar[iE]){
-						 strDecrypt->agregar((const char)NBBase64Vals[iE]);
-						 break;
-						 }
-						 } NBASSERT(iE < conteoE)*/
 					}
 				}
 				strContenido = _rqStrTmpDecrypt.str();

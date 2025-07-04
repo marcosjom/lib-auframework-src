@@ -9,6 +9,9 @@
 #include "AUFrameworkBaseStdAfx.h"
 #include "AUFrameworkBase.h"
 #include "AUFrameworkBaseRegistro.h"
+//
+#include "nb/core/NBMngrProcess.h"
+#include "nb/core/NBMngrStructMaps.h"
 
 //UI16 AUAlmacenDatos::idTipoClase;
 UI16 AUArchivo::idTipoClase;
@@ -59,6 +62,11 @@ UI16 AUVideoCuadroMutable::idTipoClase;
 
 NB_METODO_INICIALIZADOR_CUERPO(AUFrameworkBaseInicializar) {
 	printf("\n\n+++++++++++++ AUFrameworkBaseInicializar +++++++++++++++\n\n");
+    //These are automatically called by 'AUFrameworkBaseInicializar'
+    if(!NBMngrProcess_isInited()){
+        NBMngrProcess_init();
+        NBMngrStructMaps_init();
+    }
 	NBGestorAUObjetos::inicializar();
 #	ifdef CONFIG_NB_GESTOR_AUOBJETOS_REGISTRAR_TODOS
 	NBGestorAUObjetos::setFuncObjPtrIsAliveVerif(AUObjeto::objPtrIsAlive);

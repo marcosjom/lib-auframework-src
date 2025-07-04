@@ -95,6 +95,8 @@ class NBGestorAnimadores {
 		//Animadores
 		static STNBThreadMutex							_mutex;
 		static AUArregloNativoMutableP<STAnimador>*		_animadores;
+        static SI32                                     _animadoresBroadcastTickCurIdx;
+        static SI32                                     _animadoresBroadcastTickSz;
 		static STAnimadoresGrupo						_gruposAnimadores[ENGestorAnimadoresGrupo_Conteo];
 		static ENGestorAnimadoresModo					_modoAgregarNuevos;
 };

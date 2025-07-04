@@ -3,6 +3,7 @@
 
 #include "AUObjeto.h"
 #include "AUCadenaMutable.h"
+#include "nb/crypto/NBBase64.h"
 
 class AUBase64 : public AUObjeto {
 	public:
