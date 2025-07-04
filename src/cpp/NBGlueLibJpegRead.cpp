@@ -51,6 +51,7 @@ void* NBGlueLibJpegRead_stateCreate(void* param, AUArchivo* stream){
 	}
 	{
 		IFileItf fileItf = AUArchivo::getFileItf();
+        obj->stream2 = NBFile_alloc(NULL);
         NBFile_openAsItf(obj->stream2, &fileItf, stream);
 #		ifdef NB_CONFIG_INCLUDE_ASSERTS
 		NBFile_dbgSetPathRef(obj->stream2, "NBGlueLibJpegRead_stateCreate");
@@ -101,7 +102,11 @@ ENJpegReadResult NBGlueLibJpegRead_stateRead(void* param, void* pState, BYTE* ds
 	ENJpegReadResult r = ENJpegReadResult_error;
 	STNBGlueLibJpegRead* obj = (STNBGlueLibJpegRead*)pState;
 	if(obj != NULL){
-		r = NBJpegRead_feedRead(&obj->jpeg, dst, dstSz, dstLinesReadCount);
+        NBFile_lock(obj->stream2);
+        {
+            r = NBJpegRead_feedRead(&obj->jpeg, dst, dstSz, dstLinesReadCount);
+        }
+        NBFile_unlock(obj->stream2);
 	}
 	return r;
 }
