@@ -22,7 +22,9 @@ STAnimadoresGrupo NBGestorAnimadores::_gruposAnimadores[ENGestorAnimadoresGrupo_
 //
 STNBThreadMutex NBGestorAnimadores::_mutex;
 AUArregloNativoMutableP<STAnimador>* NBGestorAnimadores::_animadores = NULL;
-
+SI32 NBGestorAnimadores::_animadoresBroadcastTickCurIdx = 0;
+SI32 NBGestorAnimadores::_animadoresBroadcastTickSz = 0;
+//
 bool NBGestorAnimadores::inicializar(float ticksPorSegundo){
 	AU_GESTOR_PILA_LLAMADAS_PUSH_GESTOR_2("NBGestorAnimadores::inicializar")
 	_gestorInicializado				= false;
@@ -32,6 +34,8 @@ bool NBGestorAnimadores::inicializar(float ticksPorSegundo){
 	_modoAgregarNuevos				= ENGestorAnimadoresModo_agregarHabilitados;
 	NBThreadMutex_init(&_mutex);
 	_animadores						= new(ENMemoriaTipo_General) AUArregloNativoMutableP<STAnimador>(); NB_DEFINE_NOMBRE_PUNTERO(_animadores, "NBGestorAnimadores::_animadores");
+    _animadoresBroadcastTickCurIdx  = 0;
+    _animadoresBroadcastTickSz      = 0;
 	//
 	SI32 iGrupo;
 	for(iGrupo=0; iGrupo<ENGestorAnimadoresGrupo_Conteo; iGrupo++){
@@ -348,6 +352,14 @@ void NBGestorAnimadores::quitarAnimador(NBAnimador* animador){
 		for(i = 0; i < conteo; i++){
 			STAnimador* datos = _animadores->elemPtr(i);
 			if(datos->animador == animador){
+                //The current notifying itm removed itself
+                if(i == _animadoresBroadcastTickCurIdx){
+                    --_animadoresBroadcastTickCurIdx;
+                }
+                //Item removed before notifying it
+                if(i < _animadoresBroadcastTickSz){
+                    --_animadoresBroadcastTickSz;
+                }
 				_animadores->quitarElementoEnIndice(i);
 				break;
 			}
@@ -392,6 +404,33 @@ void NBGestorAnimadores::difundeTick(const float segundos, const ENGestorAnimado
 	AU_GESTOR_PILA_LLAMADAS_PUSH_GESTOR_2("NBGestorAnimadores::difundeTick")
 	CICLOS_CPU_TIPO tIni; CICLOS_CPU_HILO(tIni);
 	{
+        //Notify locked
+        NBThreadMutex_lock(&_mutex);
+        {
+            //initialize notification range
+            _animadoresBroadcastTickCurIdx = 0;
+            _animadoresBroadcastTickSz = _animadores->conteo;
+            //notify (the range coudl be modified by any 'tickAnimacion()' call)
+            for(; _animadoresBroadcastTickCurIdx < _animadoresBroadcastTickSz && _animadoresBroadcastTickCurIdx < _animadores->conteo; ++_animadoresBroadcastTickCurIdx){
+                STAnimador d = _animadores->elemento[_animadoresBroadcastTickCurIdx];
+                NBAnimador* animador = d.animador;
+                if(animador->_animacionHabilitada && animador->_animacionEnEjecucion && _gruposAnimadores[animador->_grupoAnimacion].grupoActivo && (animador->_grupoAnimacion == grpFiltro || grpFiltro == ENGestorAnimadoresGrupo_Conteo)){
+                    d.obj->retener();
+                    NBThreadMutex_unlock(&_mutex);
+                    {
+                        animador->tickAnimacion(segundos);
+                    }
+                    NBThreadMutex_lock(&_mutex);
+                    d.obj->liberar();
+                    _debugEstadisticas.conteoAnimadoresEjecutados++;
+                }
+                _debugEstadisticas.conteoAnimadoresRecorridos++;
+            }
+        }
+        NBThreadMutex_unlock(&_mutex);
+        //2025-07-04
+        //ToDo: remove
+        /*
 		STNBArray arr;
 		NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 		//Clone list and retain (locked)
@@ -441,6 +480,7 @@ void NBGestorAnimadores::difundeTick(const float segundos, const ENGestorAnimado
 			NB_GESTOR_AUOBJETOS_VALIDATE_ALL_OBJETS_TO_BE_ALIVE()
 		}
 		NBArray_release(&arr);
+        */
 	}
 	CICLOS_CPU_TIPO tFin; CICLOS_CPU_HILO(tFin);
 	_debugEstadisticas.ciclosAcumulados += (tFin - tIni);
