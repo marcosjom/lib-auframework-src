@@ -16,6 +16,7 @@
 #include "NBColor.h"
 #include "AUCadenaMutable.h"
 #include "NBLinea.h"
+#include "AUFuenteMapaBits.h"
 
 #define AUMAPABITSLIENZO_COMBINAR_COLORES(DEST_R, DEST_G, DEST_B, DEST_A, ORIG_R, ORIG_G, ORIG_B, ORIG_A, MULT_R, MULT_G, MULT_B, MULT_A, TMP_ALPHA_ACT, TMP_ALPHA_NVO, TMP_ALPHA_NVO_INV) \
 	TMP_ALPHA_ACT	= (float)DEST_A / 255.0f; \
@@ -46,7 +47,7 @@ class AUMapaBitsLienzo : public AUMapaBits {
 		bool		dibujarMapaBits(SI32 posXDestino, SI32 posYDestino, AUMapaBits* mapaBitsFuente, SI32 posXFuente = 0, SI32 posYFuente = 0, SI32 anchoFuente = 65536, SI32 altoFuente = 65536, float multR=1.0f, float multG=1.0f, float multB=1.0f, float multA=1.0f);
 		//bool		dibujarMapaBitsRGBASuavizando(float posXDestino, float posYDestino, AUMapaBits* mapaBitsFuente, SI32 posXFuente = 0, SI32 posYFuente = 0, SI32 anchoFuente = 65536, SI32 altoFuente = 65536, float multR=1.0f, float multG=1.0f, float multB=1.0f, float multA=1.0f);
 		//
-		//void		dibujarTexto(const SI32 posX, const SI32 posY, AUFuenteMapaBits* fuente, const char* texto, const ENNBTextLineAlignH alineaH, const ENNBTextAlignV alineaV, float multR = 1.0f, float multG = 1.0f, float multB = 1.0f, float multA = 1.0f, const float anchoLimite=99999999.0f, const float altoLimite=99999999.0f);
+		void		dibujarTexto(const SI32 posX, const SI32 posY, AUFuenteMapaBits* fuente, const char* texto, const ENNBTextLineAlignH alineaH, const ENNBTextAlignV alineaV, float multR = 1.0f, float multG = 1.0f, float multB = 1.0f, float multA = 1.0f, const float anchoLimite=99999999.0f, const float altoLimite=99999999.0f);
 		//Dibujado de formas vectoriales
 		bool 		dibujarForma(AUForma* forma, double escalaX, double escalaY, SI32 trasladoX, SI32 trasladoY, bool pintarRellenos, bool pintarLineas, float anchoLineaImplicito, const NBColor8 &colorLineaImplicito, const NBColor8 &colorRellenoIzqImplicito, const NBColor8 &colorRellenoDerImplicito);
 		bool		dibujarFormaMonocromatica(AUForma* forma, double escalaX, double escalaY, SI32 trasladoX, SI32 trasladoY, const NBColor8 &colorRelleno, float anchoLineas, const NBColor8 &colorLinea);

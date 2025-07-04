@@ -1137,10 +1137,98 @@ bool AUMapaBitsLienzo::dibujarMapaBits(SI32 posXDestino, SI32 posYDestino, AUMap
 	return exito;
 }*/
 
-/*void AUMapaBitsLienzo::dibujarTexto(const SI32 posX, const SI32 posY, AUFuenteMapaBits* fuente, const char* texto, const ENNBTextLineAlignH alineaH, const ENNBTextAlignV alineaV, float multR, float multG, float multB, float multA, const float anchoLimite, const float altoLimite){
+void AUMapaBitsLienzo::dibujarTexto(const SI32 posX, const SI32 posY, AUFuenteMapaBits* fuente, const char* texto, const ENNBTextLineAlignH alineaH, const ENNBTextAlignV alineaV, float multR, float multG, float multB, float multA, const float anchoLimite, const float altoLimite){
 	NBASSERT(fuente != NULL)
+    STNBTextMetrics m;
+    NBTextMetrics_init(&m);
+    //Calculate chars definition
+    STNBTextMetricsBuilder mBldr;
+    NBTextMetricsBuilder_init(&mBldr);
+    //Feed formats
+    {
+        NBTextMetricsBuilder_pushFormat(&mBldr);
+        fuente->configureMetricsBuilder(&mBldr);
+        NBTextMetricsBuilder_setFormat(&mBldr, NBST_P(STNBColor8, (UI8)(255.f * multR), (UI8)(255.f * multG), (UI8)(255.f * multB), (UI8)(255.f * multA) ), alineaH, ENNBTextCharAlignV_Base);
+        NBTextMetricsBuilder_appendBytes(&mBldr, texto, NBString_strLenBytes(texto));
+        NBTextMetricsBuilder_popFormat(&mBldr);
+    }
+    //Feed columns
+    {
+        const STNBRect column = {
+            (alineaH == ENNBTextLineAlignH_Right ? -anchoLimite : alineaH == ENNBTextLineAlignH_Center ? anchoLimite * -0.5f : 0.0f)
+            , 0
+            , anchoLimite
+            , altoLimite
+        };
+        NBTextMetricsBuilder_feedStart(&mBldr, &m);
+        NBTextMetricsBuilder_feed(&mBldr, &m, column, TRUE, texto, NBString_strLenBytes(texto));
+        NBTextMetricsBuilder_feedEnd(&mBldr, &m);
+    }
+    //Calculations
+    {
+        const SI32 cntLinea = m.lines.use;
+        if(cntLinea > 0){
+            //Alineacion vertical
+            const STNBTextMetricsLine* firstLine = NBArray_itmPtrAtIndex(&m.lines, STNBTextMetricsLine, 0);
+            const STNBTextMetricsLine* lastLine = NBArray_itmPtrAtIndex(&m.lines, STNBTextMetricsLine, cntLinea - 1);
+            float despAlineaY   = 0.0f;
+            switch(alineaV) {
+                case ENNBTextAlignV_Base:
+                    despAlineaY = firstLine->fontMetricsMax.ascender;
+                    break;
+                case ENNBTextAlignV_FromBottom:
+                    despAlineaY = -(lastLine->yBase - lastLine->fontMetricsMax.descender); //descender is neg
+                    break;
+                case ENNBTextAlignV_Center:
+                    despAlineaY = -(lastLine->yBase - lastLine->fontMetricsMax.descender) * 0.5f; //descender is neg
+                    break;
+                default: /*ENNBTextAlignV_FromTop*/
+                    break;
+            }
+        }
+    }
+    //Characters
+    {
+        SI32 i; const SI32 cntChars = m.chars.use;
+        for(i = 0; i < cntChars; i++){
+            const STNBTextMetricsChar* c = NBArray_itmPtrAtIndex(&m.chars, STNBTextMetricsChar, i);
+            /*NBASSERT(_fuenteTextura == c->itfObj)
+            AUFuenteTextura* fnt = (AUFuenteTextura*)c->itfObj;
+            STFuenteVisualChar rc;
+            NBMemory_setZeroSt(rc, STFuenteVisualChar);
+            if(fnt->charMetricToRenderChar(c, &rc)){ //false when isControlChar
+                STTextoSpriteChar* datosSprite = this->privRegistroSpriteDisponible();
+                if(animacion != ENEscenaTextoAnimacion_Ninguna){
+                    datosSprite->estado        = ENEscenaCharEstado_Entering;
+                    datosSprite->animacion    = animacion;
+                    datosSprite->sprite->establecerMultiplicadorColor8(255, 255, 255, 0);
+                } else {
+                    datosSprite->estado        = ENEscenaCharEstado_Presentando;
+                    datosSprite->animacion    = ENEscenaTextoAnimacion_Ninguna;
+                    datosSprite->sprite->establecerMultiplicadorColor8(255, 255, 255, 255);
+                }
+                datosSprite->sprite->establecerTextura(rc.texturaSprite); NBASSERT(rc.texturaSprite->esClase(AUTextura::idTipoClase))
+                datosSprite->sprite->redimensionar(0.0f, 0.0f, rc.areaSprite.ancho, rc.areaSprite.alto);
+                datosSprite->sprite->establecerTraslacion(rc.areaSprite.x, rc.areaSprite.y);
+                this->agregarObjetoEscena(datosSprite->sprite);
+            }*/
+            /*
+            if(datChar->objDatosGrafico != NULL && datChar->objAtlasGrafico != NULL){
+                NBASSERT(datChar->objDatosGrafico->esClase(AUMapaBits::idTipoClase))
+                NBASSERT(datChar->objAtlasGrafico->esClase(AUAtlasMapa::idTipoClase))
+                this->dibujarMapaBits(posX + datChar->posSupIzq.x, posY + datChar->posSupIzq.y, (AUMapaBits*)datChar->objDatosGrafico, datChar->propsCaracter.area.x, datChar->propsCaracter.area.y, datChar->propsCaracter.area.ancho, datChar->propsCaracter.area.alto, multR, multG, multB, multA);
+            }*/
+        }
+    }
+    //
+    NBTextMetricsBuilder_release(&mBldr);
+    NBTextMetrics_release(&m);
+    
+    
+    /*
 	NBRectangulo columna; NBRECTANGULO_ESTABLECER(columna, 0, 0, anchoLimite, altoLimite)
 	NBPunto posicion; NBPUNTO_ESTABLECER(posicion, 0, 0)
+    fuente->configureMetricsBuilder(<#STNBTextMetricsBuilder *mBuilder#>)
 	STTxtOrgFormatoBloque formatoBloque; fuente->configuraBloqueFormato(formatoBloque, 0, 9999999, ENNBTextLineAlignH_Left, ENNBTextCharAlignV_Base, 0.0f, 0.0f, 0.0f, 1.0f);
 	AUArregloNativoMutableP<STTxtOrgChar>* orgDatosChars = new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STTxtOrgChar>(AUCadena::tamano(texto));
 	AUArregloNativoMutableP<STTxtOrgLinea>* orgDatosLineas = new(ENMemoriaTipo_Temporal) AUArregloNativoMutableP<STTxtOrgLinea>(16);
@@ -1189,7 +1277,8 @@ bool AUMapaBitsLienzo::dibujarMapaBits(SI32 posXDestino, SI32 posYDestino, AUMap
 	}
 	orgDatosLineas->liberar(NB_RETENEDOR_THIS); orgDatosLineas = NULL;
 	orgDatosChars->liberar(NB_RETENEDOR_THIS); orgDatosChars = NULL;
-}*/
+    */
+}
 
 bool AUMapaBitsLienzo::dibujarForma(AUForma* forma, double escalaX, double escalaY, SI32 trasladoX, SI32 trasladoY, bool pintarRellenos, bool pintarLineas, float anchoLineaImplicito, const NBColor8 &colorLineaImplicito, const NBColor8 &colorRellenoIzqImplicito, const NBColor8 &colorRellenoDerImplicito){
 	AU_GESTOR_PILA_LLAMADAS_PUSH_2("AUMapaBitsLienzo::dibujarForma")	
