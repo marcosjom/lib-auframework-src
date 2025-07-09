@@ -419,9 +419,9 @@ void NBGestorAnimadores::difundeTick(const float segundos, const ENGestorAnimado
                     NBThreadMutex_unlock(&_mutex);
                     {
                         animador->tickAnimacion(segundos);
+                        d.obj->liberar(); //release unlocked
                     }
                     NBThreadMutex_lock(&_mutex);
-                    d.obj->liberar();
                     _debugEstadisticas.conteoAnimadoresEjecutados++;
                 }
                 _debugEstadisticas.conteoAnimadoresRecorridos++;
