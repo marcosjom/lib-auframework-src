@@ -439,7 +439,7 @@ void NBGestorMemoria::formatearMemoria(void* punteroMemoria, const size_t bytesD
 void* NBGestorMemoria::reservarMemoria(size_t cantidadBytes, ENMemoriaTipo tipoMemoria, bool formatearBloqueReservado){
 	if(!_gestorInicializado){
 		//PRINTF_WARNING("NBGestorMemoria::reservarMemoria(%d) antes de inicializar.\n", (SI32)cantidadBytes);
-		return NBMemory_alloc(cantidadBytes);
+		return malloc(cantidadBytes); //keep this as native 'malloc'
 	}
 	MEMHILO_MUTEX_ACTIVAR
 	NBASSERT(!_bloqueoMemoria)
@@ -581,7 +581,7 @@ void* NBGestorMemoria::privReservarMemoria(size_t cantidadBytes, ENMemoriaTipo t
 void NBGestorMemoria::liberarMemoria(void* punteroMemoria){
 	if(!_gestorInicializado){
 		//PRINTF_WARNING("NBGestorMemoria::liberarMemoria antes de inicializar.\n");
-        NBMemory_free(punteroMemoria);
+        free(punteroMemoria); //keep this as native 'free()' call.
 	} else {
 		MEMHILO_MUTEX_ACTIVAR
 		NBASSERT(!_bloqueoMemoria)
