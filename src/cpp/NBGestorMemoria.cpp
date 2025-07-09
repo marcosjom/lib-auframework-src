@@ -2,6 +2,8 @@
 #include "AUFrameworkBaseStdAfx.h"
 #include "NBGestorMemoria.h"
 
+#include "nb/core/NBMemory.h"
+
 #if defined(CONFIG_NB_GESTOR_AUOBJETOS_REGISTRAR_TODOS) && defined(CONFIG_NB_INCLUIR_VALIDACIONES_ASSERT)
 #	include "NBObjeto.h"
 #endif
@@ -144,7 +146,7 @@ bool NBGestorMemoria::inicializar(SI32 cantZonasMemoriaPrecreadasAgil, UI32 byte
 	#ifdef CONFIG_NB_GESTOR_MEMORIA_REGISTRAR_BLOQUES
 	_tamanoArreglos		= NB_GESTOR_MEMORIA_TAMANO_BLOQUES_PUNTEROS;
 	_usoArreglos		= 0;
-	_arrBloques			= (NBDescBloque*)malloc(sizeof(NBDescBloque) * _tamanoArreglos); NBASSERT(_arrBloques != NULL)
+	_arrBloques			= (NBDescBloque*)NBMemory_alloc(sizeof(NBDescBloque) * _tamanoArreglos); NBASSERT(_arrBloques != NULL)
 	if(_arrBloques == NULL){
 		PRINTF_ERROR("NBGestorMemoria, no se pudo reservar espacio para el arreglo de punteros (tamano %d).\n", _tamanoArreglos);
 	} else {
@@ -179,7 +181,7 @@ void NBGestorMemoria::finalizar(){
 	MEMHILO_MUTEX_ACTIVAR
 	#ifdef CONFIG_NB_GESTOR_MEMORIA_REGISTRAR_BLOQUES
 	if(_arrBloques != NULL){
-		free(_arrBloques);
+        NBMemory_free(_arrBloques);
 		_arrBloques = NULL;
 	}
 	_tamanoArreglos		= 0;
@@ -437,7 +439,7 @@ void NBGestorMemoria::formatearMemoria(void* punteroMemoria, const size_t bytesD
 void* NBGestorMemoria::reservarMemoria(size_t cantidadBytes, ENMemoriaTipo tipoMemoria, bool formatearBloqueReservado){
 	if(!_gestorInicializado){
 		//PRINTF_WARNING("NBGestorMemoria::reservarMemoria(%d) antes de inicializar.\n", (SI32)cantidadBytes);
-		return malloc(cantidadBytes);
+		return NBMemory_alloc(cantidadBytes);
 	}
 	MEMHILO_MUTEX_ACTIVAR
 	NBASSERT(!_bloqueoMemoria)
@@ -510,7 +512,7 @@ void* NBGestorMemoria::privReservarMemoria(size_t cantidadBytes, ENMemoriaTipo t
 		#endif
 		NBASSERT(((unsigned long)puntero % CONFIG_NB_GESTION_MEMORIA_MULTIPLO_PUNTEROS)==0) //Debe ser multiplo de CONFIG_NB_GESTION_MEMORIA_MULTIPLO_PUNTEROS
 	#else
-		void* puntero = malloc(cantidadBytes); NBASSERT(puntero != NULL)
+		void* puntero = NBMemory_alloc(cantidadBytes); NBASSERT(puntero != NULL)
 	#endif
 	//-----------------------
 	//--- Formatear datos
@@ -535,13 +537,13 @@ void* NBGestorMemoria::privReservarMemoria(size_t cantidadBytes, ENMemoriaTipo t
 			if(_usoArreglos>=_tamanoArreglos){
 				NBDescBloque* arregloAnterior = _arrBloques;
 				_tamanoArreglos += NB_GESTOR_MEMORIA_TAMANO_BLOQUES_PUNTEROS;
-				_arrBloques 	= (NBDescBloque*)malloc(sizeof(NBDescBloque) * _tamanoArreglos); NBASSERT(_arrBloques != NULL)
+				_arrBloques 	= (NBDescBloque*)NBMemory_alloc(sizeof(NBDescBloque) * _tamanoArreglos); NBASSERT(_arrBloques != NULL)
 				SI32 i; for(i=0; i<_usoArreglos; i++) _arrBloques[i] = arregloAnterior[i];
 				while(i<_tamanoArreglos){
 					_arrBloques[i].puntero	= NULL;
 					i++;
 				}
-				free(arregloAnterior);
+                NBMemory_free(arregloAnterior);
 				PRINTF_INFO("NBGestorMemoria, arreglo de punteros redimensionado a %d\n", _tamanoArreglos);
 			}
 			insertarEnIndice = _usoArreglos; _usoArreglos++;
@@ -579,7 +581,7 @@ void* NBGestorMemoria::privReservarMemoria(size_t cantidadBytes, ENMemoriaTipo t
 void NBGestorMemoria::liberarMemoria(void* punteroMemoria){
 	if(!_gestorInicializado){
 		//PRINTF_WARNING("NBGestorMemoria::liberarMemoria antes de inicializar.\n");
-		free(punteroMemoria);
+        NBMemory_free(punteroMemoria);
 	} else {
 		MEMHILO_MUTEX_ACTIVAR
 		NBASSERT(!_bloqueoMemoria)
@@ -643,10 +645,10 @@ void NBGestorMemoria::privLiberarMemoria(void* punteroMemoria){
 		}
 		if(iZonaExPropietaria==-1){
 			PRINTF_WARNING("NBGestorMemoria::liberarMemoria de puntero no registrado en zonas.\n");
-			free(punteroMemoria);
+            NBMemory_free(punteroMemoria);
 		}
 	#else
-		free(punteroMemoria);
+        NBMemory_free(punteroMemoria);
 	#endif
 	#ifdef CONFIG_NB_RECOPILAR_ESTADISTICAS_DE_GESTION_MEMORIA
 	_debugConteoPunteros--;
